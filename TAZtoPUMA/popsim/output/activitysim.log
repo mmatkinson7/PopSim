@@ -1,0 +1,129 @@
+13/04/2022 15:26:55 - INFO - activitysim - Read logging configuration from: configs\logging.yaml
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING configs_dir: configs
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING settings_file_name: settings.yaml
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING data_dir: data
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING output_dir: output
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING multiprocess: None
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING num_processes: None
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING resume_after: None
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING GROUP_BY_INCIDENCE_SIGNATURE: True
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING INTEGERIZE_WITH_BACKSTOPPED_CONTROLS: True
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING SUB_BALANCE_WITH_FLOAT_SEED_WEIGHTS: False
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING meta_control_data: None
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING control_file_name: controls.csv
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING USE_CVXPY: False
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING USE_SIMUL_INTEGERIZER: True
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - ENV MKL_NUM_THREADS: None
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - ENV OMP_NUM_THREADS: None
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - ENV OPENBLAS_NUM_THREADS: None
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - NUMPY blas_opt_info libraries: ['openblas_info']
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - NUMPY lapack_opt_info libraries: ['openblas_lapack_info']
+13/04/2022 15:26:55 - INFO - activitysim.cli.run - run single process simulation
+13/04/2022 15:26:55 - DEBUG - activitysim.core.random - Set random seed base to 0
+13/04/2022 15:26:55 - DEBUG - activitysim.core.pipeline - open_pipeline - new, empty pipeline
+13/04/2022 15:26:55 - DEBUG - activitysim.core.pipeline - opened pipeline_store output\pipeline.h5
+13/04/2022 15:26:55 - DEBUG - activitysim.core.pipeline - add_checkpoint init timestamp 2022-04-13 15:26:55.659120
+13/04/2022 15:26:55 - DEBUG - activitysim.core.pipeline - open_pipeline complete
+13/04/2022 15:26:55 - INFO - activitysim.core.tracing - Time to execute open_pipeline : 0.032 seconds (0.0 minutes)
+13/04/2022 15:26:55 - INFO - activitysim.core.tracing - Time to execute preload_injectables : 0.022 seconds (0.0 minutes)
+13/04/2022 15:26:55 - INFO - activitysim.core.pipeline - #run_model running step input_pre_processor
+13/04/2022 15:26:55 - INFO - populationsim.steps.input_pre_processor - Using table list: [{'tablename': 'households', 'filename': 'hh_pums_2019_5YR.csv', 'index_col': 'hh_id', 'rename_columns': {'SERIALNO': 'hh_id', 'HH': 'num_hh'}}, {'tablename': 'persons', 'filename': 'person_pums_2019_5YR.csv', 'rename_columns': {'SERIALNO': 'hh_id', 'SPORDER': 'per_num'}, 'drop_columns': ['indp02', 'naicsp02', 'occp02', 'socp00', 'occp10', 'socp10', 'indp07', 'naicsp07']}, {'tablename': 'geo_cross_walk', 'filename': 'geo_cross_walk.csv', 'column_map': {'TAZ': 'TAZ'}}, {'tablename': 'TAZ_control_data', 'filename': '2040_LandUse_update_11_05_2018_.csv', 'rename_columns': {'ID': 'TAZ'}}, {'tablename': 'REGION_control_data', 'filename': 'region_control_2040.csv', 'rename_columns': {'HH': 'num_hh'}}]
+13/04/2022 15:26:55 - INFO - activitysim.core.input - Reading CSV file data\hh_pums_2019_5YR.csv
+13/04/2022 15:26:55 - DEBUG - activitysim.core.input - raw households table size: (183636, 11) 16.2 MB
+13/04/2022 15:26:55 - DEBUG - activitysim.core.input - renaming columns: {'SERIALNO': 'hh_id', 'HH': 'num_hh'}
+13/04/2022 15:26:55 - DEBUG - activitysim.core.input - households table columns: ['Unnamed: 0' 'WGTP' 'NP' 'PUMA' 'ST' 'TYPE' 'HHEMP' 'HHINCPADJ' 'HHNP'
+ 'HHEMPCAT']
+13/04/2022 15:26:55 - DEBUG - activitysim.core.input - households table size: (183636, 10) 16.2 MB
+13/04/2022 15:26:55 - DEBUG - activitysim.core.input - households index name: hh_id
+13/04/2022 15:26:55 - INFO - populationsim.steps.input_pre_processor - registering table households
+13/04/2022 15:26:55 - INFO - activitysim.core.input - Reading CSV file data\person_pums_2019_5YR.csv
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - raw persons table size: (435813, 8) 27.9 MB
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - dropping columns: ['indp02', 'naicsp02', 'occp02', 'socp00', 'occp10', 'socp10', 'indp07', 'naicsp07']
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - renaming columns: {'SERIALNO': 'hh_id', 'SPORDER': 'per_num'}
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - persons table columns: ['Unnamed: 0' 'hh_id' 'PWGTP' 'per_num' 'ESR' 'EMP' 'PUMA' 'ST']
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - persons table size: (435813, 8) 27.9 MB
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - persons index name: None
+13/04/2022 15:26:56 - INFO - populationsim.steps.input_pre_processor - registering table persons
+13/04/2022 15:26:56 - INFO - activitysim.core.input - Reading CSV file data\geo_cross_walk.csv
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - raw geo_cross_walk table size: (6023, 4) 192.9 KB
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - renaming columns: {'TAZ': 'TAZ'}
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - geo_cross_walk table columns: ['OID_' 'REGION' 'TAZ' 'PUMA']
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - geo_cross_walk table size: (6023, 4) 192.9 KB
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - geo_cross_walk index name: None
+13/04/2022 15:26:56 - INFO - populationsim.steps.input_pre_processor - registering table geo_cross_walk
+13/04/2022 15:26:56 - INFO - activitysim.core.input - Reading CSV file data\2040_LandUse_update_11_05_2018_.csv
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - raw TAZ_control_data table size: (5839, 55) 2.6 MB
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - renaming columns: {'ID': 'TAZ'}
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - TAZ_control_data table columns: ['TAZ' 'In_CTPS_Model' 'In_101' 'In_97' 'In_63' 'TAZ_ID' 'State' 'County'
+ 'Town' 'RPA' 'TAZ_Type' 'Town_ID' 'Tot_Emp' 'Ret_Emp' 'Srv_Emp' 'Bas_Emp'
+ 'K12G_Emp' 'K12P_Emp' 'Coll_Emp' 'HH' 'Income1' 'Income2' 'Income3'
+ 'Income4' 'Income_Total' 'HH_Pop' 'Tot_Pop' 'GQ_Pop' 'Dorm_Pop' 'Worker0'
+ 'Worker1' 'Worker2' 'Worker3p' 'Worker_Total' 'HHSize1' 'HHSize2'
+ 'HHSize3' 'HHSize4p' 'Size_Total' 'Veh0' 'Veh1' 'Veh2' 'Veh3p'
+ 'Veh_Total' 'ADT' 'Age0to4_enrollment' 'Age5to14_enrollment'
+ 'Age15to18_enrollment' 'Age19plus_commuters' 'Age19plus_dorms'
+ 'Age0to4_enrollment_2016' 'Age5to14_enrollment_2016'
+ 'Age15to18_enrollment_2016' 'Age19plus_commuters_2016'
+ 'Age19plus_dorms_2016']
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - TAZ_control_data table size: (5839, 55) 2.6 MB
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - TAZ_control_data index name: None
+13/04/2022 15:26:56 - INFO - populationsim.steps.input_pre_processor - registering table TAZ_control_data
+13/04/2022 15:26:56 - INFO - activitysim.core.input - Reading CSV file data\region_control_2040.csv
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - raw REGION_control_data table size: (1, 43) 472 B
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - renaming columns: {'HH': 'num_hh'}
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - REGION_control_data table columns: ['R_ID' 'Tot_Emp' 'Ret_Emp' 'Srv_Emp' 'Bas_Emp' 'K12G_Emp' 'K12P_Emp'
+ 'Coll_Emp' 'num_hh' 'Income1' 'Income2' 'Income3' 'Income4'
+ 'Income_Total' 'HH_Pop' 'Tot_Pop' 'GQ_Pop' 'Dorm_Pop' 'Worker0' 'Worker1'
+ 'Worker2' 'Worker3p' 'Worker_Total' 'HHSize1' 'HHSize2' 'HHSize3'
+ 'HHSize4p' 'Size_Total' 'Veh0' 'Veh1' 'Veh2' 'Veh3p' 'Veh_Total'
+ 'Age0to4_enrollment' 'Age5to14_enrollment' 'Age15to18_enrollment'
+ 'Age19plus_commuters' 'Age19plus_dorms' 'Age0to4_enrollment_2016'
+ 'Age5to14_enrollment_2016' 'Age15to18_enrollment_2016'
+ 'Age19plus_commuters_2016' 'Age19plus_dorms_2016']
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - REGION_control_data table size: (1, 43) 472 B
+13/04/2022 15:26:56 - DEBUG - activitysim.core.input - REGION_control_data index name: None
+13/04/2022 15:26:56 - INFO - populationsim.steps.input_pre_processor - registering table REGION_control_data
+13/04/2022 15:26:56 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'input_pre_processor' : 0.839 seconds (0.0 minutes)
+13/04/2022 15:26:56 - DEBUG - activitysim.core.pipeline - add_checkpoint input_pre_processor timestamp 2022-04-13 15:26:56.587602
+13/04/2022 15:26:56 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'households' (183636, 10) 16.2 MB
+13/04/2022 15:26:56 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'persons' (435813, 8) 27.9 MB
+13/04/2022 15:26:57 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'geo_cross_walk' (6023, 4) 192.9 KB
+13/04/2022 15:26:57 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'TAZ_control_data' (5839, 55) 2.6 MB
+13/04/2022 15:26:57 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'REGION_control_data' (1, 43) 472 B
+13/04/2022 15:26:57 - INFO - activitysim.core.pipeline - #run_model running step setup_data_structures
+13/04/2022 15:26:57 - INFO - populationsim.steps.setup_data_structures - Reading control file configs\controls.csv
+13/04/2022 15:26:57 - INFO - populationsim.steps.setup_data_structures - dropping 121 TAZ control rows with empty total_hh_control
+13/04/2022 15:26:57 - INFO - populationsim.steps.setup_data_structures - dropped 6627 households not in seed zones
+13/04/2022 15:26:57 - INFO - populationsim.steps.setup_data_structures - kept 177009 households in seed zones
+13/04/2022 15:26:57 - DEBUG - activitysim.core.pipeline - rewrap table households inplace=False
+13/04/2022 15:26:57 - DEBUG - activitysim.core.pipeline - rewrap table persons inplace=False
+13/04/2022 15:26:57 - INFO - populationsim.steps.setup_data_structures - control target HH
+13/04/2022 15:26:57 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+13/04/2022 15:26:57 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.WGTP > 0) & (households.WGTP < np.inf)
+13/04/2022 15:29:50 - INFO - populationsim.steps.setup_data_structures - control target HHSize1
+13/04/2022 15:29:51 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+13/04/2022 15:29:53 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP == 1
+13/04/2022 15:30:21 - INFO - populationsim.steps.setup_data_structures - control target HHSize2
+13/04/2022 15:30:21 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+13/04/2022 15:30:21 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP == 2
+13/04/2022 15:30:26 - INFO - populationsim.steps.setup_data_structures - control target HHSize3
+13/04/2022 15:30:26 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+13/04/2022 15:30:26 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP == 3
+13/04/2022 15:30:28 - INFO - populationsim.steps.setup_data_structures - control target HHSize4p
+13/04/2022 15:30:28 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+13/04/2022 15:30:28 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP >= 4
+13/04/2022 15:30:31 - INFO - populationsim.steps.setup_data_structures - control target Income1
+13/04/2022 15:30:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+13/04/2022 15:30:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINCPADJ > -999999999) & (households.HHINCPADJ <= 21297)
+13/04/2022 15:30:33 - INFO - populationsim.steps.setup_data_structures - control target Income2
+13/04/2022 15:30:33 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+13/04/2022 15:30:33 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINCPADJ >21297) & (households.HHINCPADJ <= 42593)
+13/04/2022 15:30:37 - INFO - populationsim.steps.setup_data_structures - control target Income3
+13/04/2022 15:30:37 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+13/04/2022 15:30:37 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINCPADJ > 42593) & (households.HHINCPADJ <= 85185)
+13/04/2022 15:30:39 - INFO - populationsim.steps.setup_data_structures - control target Income4
+13/04/2022 15:30:39 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+13/04/2022 15:30:39 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINCPADJ > 85185) & (households.HHINCPADJ <= 999999999)
+13/04/2022 15:30:41 - INFO - populationsim.steps.setup_data_structures - control target Tot_Emp
+13/04/2022 15:30:41 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table persons
+13/04/2022 15:30:41 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression persons.EMP==1

@@ -1,6 +1,6 @@
 #download required PUMS data for PopSim
 
-setwd("M:/TAZtoPUMA")
+setwd("J:\\Shared drives\\TMD_TSA\\Model\\software\\PopSim\\TAZtoPUMA")
 
 library(tidycensus)
 library(tidyverse)
@@ -42,7 +42,7 @@ pums <- pums %>%
 
 #still need to deal with the adjustment factor for $
 # adjusting to 2015
-pums <- pums %>% mutate(HINCPADJ = HINCP * as.numeric(ADJINC))
+pums <- pums %>% mutate(HHINCPADJ = HINCP * as.numeric(ADJINC))
 
 # HH categories for people per HH
 pums <- pums %>% mutate(HHNP = if_else(NP<3,NP,4))
@@ -51,9 +51,12 @@ pums <- pums %>% mutate(HHEMPCAT = if_else(HHEMP<4,HHEMP,4))
 
 #separate HH and P
 
-hh <- pums %>% distinct(SERIALNO,TYPE, WGTP, NP, PUMA, ST, HHNP, HHEMP,HHEMPCAT,HINCPADJ)
+hh <- pums %>% distinct(SERIALNO,TYPE, WGTP, NP, PUMA, ST, HHNP, HHEMP,HHEMPCAT,HHINCPADJ)
 
 p <- pums %>% select(SERIALNO, PWGTP, SPORDER, ESR, EMP, PUMA, ST)
+
+p$PUMA <- paste0(p$ST,p$PUMA)
+hh$PUMA <- paste0(hh$ST,hh$PUMA)
 
 write.csv(hh, "hh_pums_2019_5YR.csv")
 write.csv(p, "person_pums_2019_5YR.csv")

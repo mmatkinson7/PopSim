@@ -1,0 +1,12 @@
+target,geography,seed_table,importance,control_field,expression
+HH,TAZ,households,1000000000,HH,(households.WGTP > 0) & (households.WGTP < np.inf)
+HHSize1,TAZ,households,5000,HHSize1,households.NP == 1
+HHSize2,TAZ,households,5000,HHSize2,households.NP == 2
+HHSize3,TAZ,households,5000,HHSize3,households.NP == 3
+HHSize4p,TAZ,households,5000,HHSize4p,households.NP >= 4
+Income1,TAZ,households,500,Income1,(households.HHINCPADJ > -999999999) & (households.HHINCPADJ <= 21297)
+Income2,TAZ,households,500,Income2,(households.HHINCPADJ >21297) & (households.HHINCPADJ <= 42593)
+Income3,TAZ,households,500,Income3,(households.HHINCPADJ > 42593) & (households.HHINCPADJ <= 85185)
+Income4,TAZ,households,500,Income4,(households.HHINCPADJ > 85185) & (households.HHINCPADJ <= 999999999)
+Tot_Emp,TAZ,persons,1000,Tot_Emp,persons.EMP==1
+Tot_Pop,TAZ,persons,1000,Tot_Pop,(persons.PWGTP > 0) & (persons.PWGTP < np.inf)
