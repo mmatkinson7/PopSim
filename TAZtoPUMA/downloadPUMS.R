@@ -19,6 +19,15 @@ pums <- get_pums(
 
 #get just housing units, exclude group quarters
 pums <- pums %>% filter(TYPE == 1)
+#just get PUMAs in the model region
+#pums <- pums %>% filter((ST != 33 & PUMA != "00100") & (ST != 33 & PUMA != "00200"))
+#make sure SERIALNO is just numbers
+pums$SERIALNO <- gsub("HU","",pums$SERIALNO)
+pums$SERIALNO_orig <- pums$SERIALNO
+jt <- data.frame(SERIALNO_orig = unique(pums$SERIALNO_orig))
+jt$SERIALNO <- rownames(jt)
+
+pums$SERIALNO <- jt$SERIALNO[match(unlist(pums$SERIALNO_orig), jt$SERIALNO_orig)]
 
 # Data dictionary for ESR
 #ESR        1      
@@ -42,15 +51,15 @@ pums <- pums %>%
 
 #still need to deal with the adjustment factor for $
 # adjusting to 2015
-pums <- pums %>% mutate(HHINCPADJ = HINCP * as.numeric(ADJINC))
+pums <- pums %>% mutate(HHINCPADJ = round(HINCP * as.numeric(ADJINC),0))
 
 # HH categories for people per HH
 pums <- pums %>% mutate(HHNP = if_else(NP<3,NP,4))
+
 # HH categories for workers per HH
-pums <- pums %>% mutate(HHEMPCAT = if_else(HHEMP<4,HHEMP,4))
+pums <- pums %>% mutate(HHEMPCAT = if_else(HHEMP<3,HHEMP,3))
 
 #separate HH and P
-
 hh <- pums %>% distinct(SERIALNO,TYPE, WGTP, NP, PUMA, ST, HHNP, HHEMP,HHEMPCAT,HHINCPADJ)
 
 p <- pums %>% select(SERIALNO, PWGTP, SPORDER, ESR, EMP, PUMA, ST)
@@ -58,8 +67,8 @@ p <- pums %>% select(SERIALNO, PWGTP, SPORDER, ESR, EMP, PUMA, ST)
 p$PUMA <- paste0(p$ST,p$PUMA)
 hh$PUMA <- paste0(hh$ST,hh$PUMA)
 
-write.csv(hh, "hh_pums_2019_5YR.csv")
-write.csv(p, "person_pums_2019_5YR.csv")
+write_csv(hh, "hh_pums_2019_5YR.csv")
+write_csv(p, "person_pums_2019_5YR.csv")
 write.csv(pums, "pums_2019_5YR_MARINH.csv")
 
 

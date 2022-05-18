@@ -8,5 +8,9 @@ Income1,TAZ,households,500,Income1,(households.HHINCPADJ > -999999999) & (househ
 Income2,TAZ,households,500,Income2,(households.HHINCPADJ >21297) & (households.HHINCPADJ <= 42593)
 Income3,TAZ,households,500,Income3,(households.HHINCPADJ > 42593) & (households.HHINCPADJ <= 85185)
 Income4,TAZ,households,500,Income4,(households.HHINCPADJ > 85185) & (households.HHINCPADJ <= 999999999)
+HHWrk0,TAZ,households,5000,Worker0,households.HHEMP==0
+HHWrk1,TAZ,households,5000,Worker1,households.HHEMP==1
+HHWrk2,TAZ,households,5000,Worker2,households.HHEMP==2
+HHWrk3p,TAZ,households,5000,Worker3p,households.HHEMP>=3
 Tot_Emp,TAZ,persons,1000,Tot_Emp,persons.EMP==1
 Tot_Pop,TAZ,persons,1000,Tot_Pop,(persons.PWGTP > 0) & (persons.PWGTP < np.inf)

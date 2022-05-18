@@ -1,60 +1,60 @@
-13/04/2022 15:26:55 - INFO - activitysim - Read logging configuration from: configs\logging.yaml
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING configs_dir: configs
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING settings_file_name: settings.yaml
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING data_dir: data
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING output_dir: output
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING multiprocess: None
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING num_processes: None
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING resume_after: None
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING GROUP_BY_INCIDENCE_SIGNATURE: True
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING INTEGERIZE_WITH_BACKSTOPPED_CONTROLS: True
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING SUB_BALANCE_WITH_FLOAT_SEED_WEIGHTS: False
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING meta_control_data: None
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING control_file_name: controls.csv
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING USE_CVXPY: False
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - SETTING USE_SIMUL_INTEGERIZER: True
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - ENV MKL_NUM_THREADS: None
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - ENV OMP_NUM_THREADS: None
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - ENV OPENBLAS_NUM_THREADS: None
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - NUMPY blas_opt_info libraries: ['openblas_info']
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - NUMPY lapack_opt_info libraries: ['openblas_lapack_info']
-13/04/2022 15:26:55 - INFO - activitysim.cli.run - run single process simulation
-13/04/2022 15:26:55 - DEBUG - activitysim.core.random - Set random seed base to 0
-13/04/2022 15:26:55 - DEBUG - activitysim.core.pipeline - open_pipeline - new, empty pipeline
-13/04/2022 15:26:55 - DEBUG - activitysim.core.pipeline - opened pipeline_store output\pipeline.h5
-13/04/2022 15:26:55 - DEBUG - activitysim.core.pipeline - add_checkpoint init timestamp 2022-04-13 15:26:55.659120
-13/04/2022 15:26:55 - DEBUG - activitysim.core.pipeline - open_pipeline complete
-13/04/2022 15:26:55 - INFO - activitysim.core.tracing - Time to execute open_pipeline : 0.032 seconds (0.0 minutes)
-13/04/2022 15:26:55 - INFO - activitysim.core.tracing - Time to execute preload_injectables : 0.022 seconds (0.0 minutes)
-13/04/2022 15:26:55 - INFO - activitysim.core.pipeline - #run_model running step input_pre_processor
-13/04/2022 15:26:55 - INFO - populationsim.steps.input_pre_processor - Using table list: [{'tablename': 'households', 'filename': 'hh_pums_2019_5YR.csv', 'index_col': 'hh_id', 'rename_columns': {'SERIALNO': 'hh_id', 'HH': 'num_hh'}}, {'tablename': 'persons', 'filename': 'person_pums_2019_5YR.csv', 'rename_columns': {'SERIALNO': 'hh_id', 'SPORDER': 'per_num'}, 'drop_columns': ['indp02', 'naicsp02', 'occp02', 'socp00', 'occp10', 'socp10', 'indp07', 'naicsp07']}, {'tablename': 'geo_cross_walk', 'filename': 'geo_cross_walk.csv', 'column_map': {'TAZ': 'TAZ'}}, {'tablename': 'TAZ_control_data', 'filename': '2040_LandUse_update_11_05_2018_.csv', 'rename_columns': {'ID': 'TAZ'}}, {'tablename': 'REGION_control_data', 'filename': 'region_control_2040.csv', 'rename_columns': {'HH': 'num_hh'}}]
-13/04/2022 15:26:55 - INFO - activitysim.core.input - Reading CSV file data\hh_pums_2019_5YR.csv
-13/04/2022 15:26:55 - DEBUG - activitysim.core.input - raw households table size: (183636, 11) 16.2 MB
-13/04/2022 15:26:55 - DEBUG - activitysim.core.input - renaming columns: {'SERIALNO': 'hh_id', 'HH': 'num_hh'}
-13/04/2022 15:26:55 - DEBUG - activitysim.core.input - households table columns: ['Unnamed: 0' 'WGTP' 'NP' 'PUMA' 'ST' 'TYPE' 'HHEMP' 'HHINCPADJ' 'HHNP'
- 'HHEMPCAT']
-13/04/2022 15:26:55 - DEBUG - activitysim.core.input - households table size: (183636, 10) 16.2 MB
-13/04/2022 15:26:55 - DEBUG - activitysim.core.input - households index name: hh_id
-13/04/2022 15:26:55 - INFO - populationsim.steps.input_pre_processor - registering table households
-13/04/2022 15:26:55 - INFO - activitysim.core.input - Reading CSV file data\person_pums_2019_5YR.csv
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - raw persons table size: (435813, 8) 27.9 MB
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - dropping columns: ['indp02', 'naicsp02', 'occp02', 'socp00', 'occp10', 'socp10', 'indp07', 'naicsp07']
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - renaming columns: {'SERIALNO': 'hh_id', 'SPORDER': 'per_num'}
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - persons table columns: ['Unnamed: 0' 'hh_id' 'PWGTP' 'per_num' 'ESR' 'EMP' 'PUMA' 'ST']
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - persons table size: (435813, 8) 27.9 MB
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - persons index name: None
-13/04/2022 15:26:56 - INFO - populationsim.steps.input_pre_processor - registering table persons
-13/04/2022 15:26:56 - INFO - activitysim.core.input - Reading CSV file data\geo_cross_walk.csv
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - raw geo_cross_walk table size: (6023, 4) 192.9 KB
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - renaming columns: {'TAZ': 'TAZ'}
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - geo_cross_walk table columns: ['OID_' 'REGION' 'TAZ' 'PUMA']
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - geo_cross_walk table size: (6023, 4) 192.9 KB
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - geo_cross_walk index name: None
-13/04/2022 15:26:56 - INFO - populationsim.steps.input_pre_processor - registering table geo_cross_walk
-13/04/2022 15:26:56 - INFO - activitysim.core.input - Reading CSV file data\2040_LandUse_update_11_05_2018_.csv
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - raw TAZ_control_data table size: (5839, 55) 2.6 MB
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - renaming columns: {'ID': 'TAZ'}
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - TAZ_control_data table columns: ['TAZ' 'In_CTPS_Model' 'In_101' 'In_97' 'In_63' 'TAZ_ID' 'State' 'County'
+18/05/2022 18:08:53 - INFO - activitysim - Read logging configuration from: configs\logging.yaml
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING configs_dir: configs
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING settings_file_name: settings.yaml
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING data_dir: data
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING output_dir: output
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING multiprocess: None
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING num_processes: None
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING resume_after: None
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING GROUP_BY_INCIDENCE_SIGNATURE: True
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING INTEGERIZE_WITH_BACKSTOPPED_CONTROLS: True
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING SUB_BALANCE_WITH_FLOAT_SEED_WEIGHTS: False
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING meta_control_data: None
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING control_file_name: controls.csv
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING USE_CVXPY: False
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - SETTING USE_SIMUL_INTEGERIZER: True
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - ENV MKL_NUM_THREADS: None
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - ENV OMP_NUM_THREADS: None
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - ENV OPENBLAS_NUM_THREADS: None
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - NUMPY blas_opt_info libraries: ['openblas_info']
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - NUMPY lapack_opt_info libraries: ['openblas_lapack_info']
+18/05/2022 18:08:53 - INFO - activitysim.cli.run - run single process simulation
+18/05/2022 18:08:53 - DEBUG - activitysim.core.random - Set random seed base to 0
+18/05/2022 18:08:53 - DEBUG - activitysim.core.pipeline - open_pipeline - new, empty pipeline
+18/05/2022 18:08:53 - DEBUG - activitysim.core.pipeline - opened pipeline_store output\pipeline.h5
+18/05/2022 18:08:53 - DEBUG - activitysim.core.pipeline - add_checkpoint init timestamp 2022-05-18 18:08:53.151669
+18/05/2022 18:08:53 - DEBUG - activitysim.core.pipeline - open_pipeline complete
+18/05/2022 18:08:53 - INFO - activitysim.core.tracing - Time to execute open_pipeline : 0.016 seconds (0.0 minutes)
+18/05/2022 18:08:53 - INFO - activitysim.core.tracing - Time to execute preload_injectables : 0.002 seconds (0.0 minutes)
+18/05/2022 18:08:53 - INFO - activitysim.core.pipeline - #run_model running step input_pre_processor
+18/05/2022 18:08:53 - INFO - populationsim.steps.input_pre_processor - Using table list: [{'tablename': 'households', 'filename': 'hh_pums_2019_5YR.csv', 'index_col': 'hh_id', 'rename_columns': {'SERIALNO': 'hh_id', 'HH': 'num_hh'}, 'drop_columns': ['ESR']}, {'tablename': 'persons', 'filename': 'person_pums_2019_5YR.csv', 'rename_columns': {'SERIALNO': 'hh_id', 'SPORDER': 'per_num'}, 'drop_columns': ['indp02', 'naicsp02', 'occp02', 'socp00', 'occp10', 'socp10', 'indp07', 'naicsp07']}, {'tablename': 'geo_cross_walk', 'filename': 'geo_cross_walk.csv', 'column_map': {'TAZ': 'TAZ'}}, {'tablename': 'TAZ_control_data', 'filename': '2040_LandUse_update_11_05_2018_.csv', 'rename_columns': {'ID': 'TAZ'}}, {'tablename': 'REGION_control_data', 'filename': 'region_control_2040.csv', 'rename_columns': {'HH': 'num_hh'}}]
+18/05/2022 18:08:53 - INFO - activitysim.core.input - Reading CSV file data\hh_pums_2019_5YR.csv
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - raw households table size: (183636, 10) 14.7 MB
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - dropping columns: ['ESR']
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - renaming columns: {'SERIALNO': 'hh_id', 'HH': 'num_hh'}
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - households table columns: ['WGTP' 'NP' 'PUMA' 'ST' 'TYPE' 'HHEMP' 'HHINCPADJ' 'HHNP' 'HHEMPCAT']
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - households table size: (183636, 9) 14.7 MB
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - households index name: hh_id
+18/05/2022 18:08:53 - INFO - populationsim.steps.input_pre_processor - registering table households
+18/05/2022 18:08:53 - INFO - activitysim.core.input - Reading CSV file data\person_pums_2019_5YR.csv
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - raw persons table size: (435813, 7) 24.4 MB
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - dropping columns: ['indp02', 'naicsp02', 'occp02', 'socp00', 'occp10', 'socp10', 'indp07', 'naicsp07']
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - renaming columns: {'SERIALNO': 'hh_id', 'SPORDER': 'per_num'}
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - persons table columns: ['hh_id' 'PWGTP' 'per_num' 'ESR' 'EMP' 'PUMA' 'ST']
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - persons table size: (435813, 7) 24.4 MB
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - persons index name: None
+18/05/2022 18:08:53 - INFO - populationsim.steps.input_pre_processor - registering table persons
+18/05/2022 18:08:53 - INFO - activitysim.core.input - Reading CSV file data\geo_cross_walk.csv
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - raw geo_cross_walk table size: (6023, 4) 192.9 KB
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - renaming columns: {'TAZ': 'TAZ'}
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - geo_cross_walk table columns: ['OID_' 'REGION' 'TAZ' 'PUMA']
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - geo_cross_walk table size: (6023, 4) 192.9 KB
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - geo_cross_walk index name: None
+18/05/2022 18:08:53 - INFO - populationsim.steps.input_pre_processor - registering table geo_cross_walk
+18/05/2022 18:08:53 - INFO - activitysim.core.input - Reading CSV file data\2040_LandUse_update_11_05_2018_.csv
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - raw TAZ_control_data table size: (5839, 55) 2.6 MB
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - renaming columns: {'ID': 'TAZ'}
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - TAZ_control_data table columns: ['TAZ' 'In_CTPS_Model' 'In_101' 'In_97' 'In_63' 'TAZ_ID' 'State' 'County'
  'Town' 'RPA' 'TAZ_Type' 'Town_ID' 'Tot_Emp' 'Ret_Emp' 'Srv_Emp' 'Bas_Emp'
  'K12G_Emp' 'K12P_Emp' 'Coll_Emp' 'HH' 'Income1' 'Income2' 'Income3'
  'Income4' 'Income_Total' 'HH_Pop' 'Tot_Pop' 'GQ_Pop' 'Dorm_Pop' 'Worker0'
@@ -65,13 +65,13 @@
  'Age0to4_enrollment_2016' 'Age5to14_enrollment_2016'
  'Age15to18_enrollment_2016' 'Age19plus_commuters_2016'
  'Age19plus_dorms_2016']
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - TAZ_control_data table size: (5839, 55) 2.6 MB
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - TAZ_control_data index name: None
-13/04/2022 15:26:56 - INFO - populationsim.steps.input_pre_processor - registering table TAZ_control_data
-13/04/2022 15:26:56 - INFO - activitysim.core.input - Reading CSV file data\region_control_2040.csv
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - raw REGION_control_data table size: (1, 43) 472 B
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - renaming columns: {'HH': 'num_hh'}
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - REGION_control_data table columns: ['R_ID' 'Tot_Emp' 'Ret_Emp' 'Srv_Emp' 'Bas_Emp' 'K12G_Emp' 'K12P_Emp'
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - TAZ_control_data table size: (5839, 55) 2.6 MB
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - TAZ_control_data index name: None
+18/05/2022 18:08:53 - INFO - populationsim.steps.input_pre_processor - registering table TAZ_control_data
+18/05/2022 18:08:53 - INFO - activitysim.core.input - Reading CSV file data\region_control_2040.csv
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - raw REGION_control_data table size: (1, 43) 472 B
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - renaming columns: {'HH': 'num_hh'}
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - REGION_control_data table columns: ['R_ID' 'Tot_Emp' 'Ret_Emp' 'Srv_Emp' 'Bas_Emp' 'K12G_Emp' 'K12P_Emp'
  'Coll_Emp' 'num_hh' 'Income1' 'Income2' 'Income3' 'Income4'
  'Income_Total' 'HH_Pop' 'Tot_Pop' 'GQ_Pop' 'Dorm_Pop' 'Worker0' 'Worker1'
  'Worker2' 'Worker3p' 'Worker_Total' 'HHSize1' 'HHSize2' 'HHSize3'
@@ -80,50 +80,1305 @@
  'Age19plus_commuters' 'Age19plus_dorms' 'Age0to4_enrollment_2016'
  'Age5to14_enrollment_2016' 'Age15to18_enrollment_2016'
  'Age19plus_commuters_2016' 'Age19plus_dorms_2016']
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - REGION_control_data table size: (1, 43) 472 B
-13/04/2022 15:26:56 - DEBUG - activitysim.core.input - REGION_control_data index name: None
-13/04/2022 15:26:56 - INFO - populationsim.steps.input_pre_processor - registering table REGION_control_data
-13/04/2022 15:26:56 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'input_pre_processor' : 0.839 seconds (0.0 minutes)
-13/04/2022 15:26:56 - DEBUG - activitysim.core.pipeline - add_checkpoint input_pre_processor timestamp 2022-04-13 15:26:56.587602
-13/04/2022 15:26:56 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'households' (183636, 10) 16.2 MB
-13/04/2022 15:26:56 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'persons' (435813, 8) 27.9 MB
-13/04/2022 15:26:57 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'geo_cross_walk' (6023, 4) 192.9 KB
-13/04/2022 15:26:57 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'TAZ_control_data' (5839, 55) 2.6 MB
-13/04/2022 15:26:57 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'REGION_control_data' (1, 43) 472 B
-13/04/2022 15:26:57 - INFO - activitysim.core.pipeline - #run_model running step setup_data_structures
-13/04/2022 15:26:57 - INFO - populationsim.steps.setup_data_structures - Reading control file configs\controls.csv
-13/04/2022 15:26:57 - INFO - populationsim.steps.setup_data_structures - dropping 121 TAZ control rows with empty total_hh_control
-13/04/2022 15:26:57 - INFO - populationsim.steps.setup_data_structures - dropped 6627 households not in seed zones
-13/04/2022 15:26:57 - INFO - populationsim.steps.setup_data_structures - kept 177009 households in seed zones
-13/04/2022 15:26:57 - DEBUG - activitysim.core.pipeline - rewrap table households inplace=False
-13/04/2022 15:26:57 - DEBUG - activitysim.core.pipeline - rewrap table persons inplace=False
-13/04/2022 15:26:57 - INFO - populationsim.steps.setup_data_structures - control target HH
-13/04/2022 15:26:57 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
-13/04/2022 15:26:57 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.WGTP > 0) & (households.WGTP < np.inf)
-13/04/2022 15:29:50 - INFO - populationsim.steps.setup_data_structures - control target HHSize1
-13/04/2022 15:29:51 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
-13/04/2022 15:29:53 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP == 1
-13/04/2022 15:30:21 - INFO - populationsim.steps.setup_data_structures - control target HHSize2
-13/04/2022 15:30:21 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
-13/04/2022 15:30:21 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP == 2
-13/04/2022 15:30:26 - INFO - populationsim.steps.setup_data_structures - control target HHSize3
-13/04/2022 15:30:26 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
-13/04/2022 15:30:26 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP == 3
-13/04/2022 15:30:28 - INFO - populationsim.steps.setup_data_structures - control target HHSize4p
-13/04/2022 15:30:28 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
-13/04/2022 15:30:28 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP >= 4
-13/04/2022 15:30:31 - INFO - populationsim.steps.setup_data_structures - control target Income1
-13/04/2022 15:30:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
-13/04/2022 15:30:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINCPADJ > -999999999) & (households.HHINCPADJ <= 21297)
-13/04/2022 15:30:33 - INFO - populationsim.steps.setup_data_structures - control target Income2
-13/04/2022 15:30:33 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
-13/04/2022 15:30:33 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINCPADJ >21297) & (households.HHINCPADJ <= 42593)
-13/04/2022 15:30:37 - INFO - populationsim.steps.setup_data_structures - control target Income3
-13/04/2022 15:30:37 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
-13/04/2022 15:30:37 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINCPADJ > 42593) & (households.HHINCPADJ <= 85185)
-13/04/2022 15:30:39 - INFO - populationsim.steps.setup_data_structures - control target Income4
-13/04/2022 15:30:39 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
-13/04/2022 15:30:39 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINCPADJ > 85185) & (households.HHINCPADJ <= 999999999)
-13/04/2022 15:30:41 - INFO - populationsim.steps.setup_data_structures - control target Tot_Emp
-13/04/2022 15:30:41 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table persons
-13/04/2022 15:30:41 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression persons.EMP==1
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - REGION_control_data table size: (1, 43) 472 B
+18/05/2022 18:08:53 - DEBUG - activitysim.core.input - REGION_control_data index name: None
+18/05/2022 18:08:53 - INFO - populationsim.steps.input_pre_processor - registering table REGION_control_data
+18/05/2022 18:08:53 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'input_pre_processor' : 0.36 seconds (0.0 minutes)
+18/05/2022 18:08:53 - DEBUG - activitysim.core.pipeline - add_checkpoint input_pre_processor timestamp 2022-05-18 18:08:53.561292
+18/05/2022 18:08:53 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'households' (183636, 9) 14.7 MB
+18/05/2022 18:08:53 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'persons' (435813, 7) 24.4 MB
+18/05/2022 18:08:53 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'geo_cross_walk' (6023, 4) 192.9 KB
+18/05/2022 18:08:53 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'TAZ_control_data' (5839, 55) 2.6 MB
+18/05/2022 18:08:53 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'REGION_control_data' (1, 43) 472 B
+18/05/2022 18:08:53 - INFO - activitysim.core.pipeline - #run_model running step setup_data_structures
+18/05/2022 18:08:53 - INFO - populationsim.steps.setup_data_structures - Reading control file configs\controls.csv
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - dropping 121 TAZ control rows with empty total_hh_control
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - dropped 6627 households not in seed zones
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - kept 177009 households in seed zones
+18/05/2022 18:08:54 - DEBUG - activitysim.core.pipeline - rewrap table households inplace=False
+18/05/2022 18:08:54 - DEBUG - activitysim.core.pipeline - rewrap table persons inplace=False
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target HH
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.WGTP > 0) & (households.WGTP < np.inf)
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target HHSize1
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP == 1
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target HHSize2
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP == 2
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target HHSize3
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP == 3
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target HHSize4p
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP >= 4
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target Income1
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINCPADJ > -999999999) & (households.HHINCPADJ <= 21297)
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target Income2
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINCPADJ >21297) & (households.HHINCPADJ <= 42593)
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target Income3
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINCPADJ > 42593) & (households.HHINCPADJ <= 85185)
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target Income4
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINCPADJ > 85185) & (households.HHINCPADJ <= 999999999)
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target HHWrk0
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.HHEMP==0
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target HHWrk1
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.HHEMP==1
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target HHWrk2
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.HHEMP==2
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target HHWrk3p
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.HHEMP>=3
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target Tot_Emp
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table persons
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression persons.EMP==1
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - control target Tot_Pop
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table persons
+18/05/2022 18:08:54 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (persons.PWGTP > 0) & (persons.PWGTP < np.inf)
+18/05/2022 18:08:54 - INFO - populationsim.steps.setup_data_structures - grouped incidence table has 6250 entries, ungrouped has 177009
+18/05/2022 18:08:54 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'setup_data_structures' : 0.386 seconds (0.0 minutes)
+18/05/2022 18:08:54 - DEBUG - activitysim.core.pipeline - add_checkpoint setup_data_structures timestamp 2022-05-18 18:08:54.363474
+18/05/2022 18:08:54 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'crosswalk' (5998, 3) 191.9 KB
+18/05/2022 18:08:54 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'control_spec' (15, 6) 848 B
+18/05/2022 18:08:54 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'REGION_controls' (1, 15) 128 B
+18/05/2022 18:08:54 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'PUMA_controls' (67, 15) 8.6 KB
+18/05/2022 18:08:54 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'TAZ_controls' (5718, 15) 731.9 KB
+18/05/2022 18:08:54 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'households' (177009, 9) 14.2 MB
+18/05/2022 18:08:54 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'persons' (435813, 7) 24.4 MB
+18/05/2022 18:08:54 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'household_groups' (177009, 3) 5.0 MB
+18/05/2022 18:08:54 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'incidence_table' (6250, 20) 1.0 MB
+18/05/2022 18:08:54 - INFO - activitysim.core.pipeline - #run_model running step initial_seed_balancing
+18/05/2022 18:08:54 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2501600
+18/05/2022 18:08:54 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 971, 'delta': 9.159289058196781e-10, 'max_gamma_dif': 3.231748202381368e-11}
+18/05/2022 18:08:54 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2501600 = 66427.01518776386
+18/05/2022 18:08:54 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2501902
+18/05/2022 18:08:55 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 968, 'delta': 9.393347589380753e-10, 'max_gamma_dif': 3.759881295195555e-11}
+18/05/2022 18:08:55 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2501902 = 55372.01303343201
+18/05/2022 18:08:55 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2501901
+18/05/2022 18:08:55 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 949, 'delta': 9.69314084437826e-10, 'max_gamma_dif': 2.733420156886268e-10}
+18/05/2022 18:08:55 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2501901 = 67689.01606991372
+18/05/2022 18:08:55 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500301
+18/05/2022 18:08:55 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 971, 'delta': 9.500362753799226e-10, 'max_gamma_dif': 4.544786769145048e-11}
+18/05/2022 18:08:55 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500301 = 55721.012919990855
+18/05/2022 18:08:55 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500502
+18/05/2022 18:08:56 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 960, 'delta': 9.613336555374425e-10, 'max_gamma_dif': 7.440670302116814e-11}
+18/05/2022 18:08:56 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500502 = 42867.01119760924
+18/05/2022 18:08:56 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2501300
+18/05/2022 18:08:56 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 934, 'delta': 8.750343999832987e-14, 'max_gamma_dif': 9.483025475987006e-10}
+18/05/2022 18:08:56 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2501300 = 51710.01682866757
+18/05/2022 18:08:56 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500704
+18/05/2022 18:08:56 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 972, 'delta': 9.476621096036664e-10, 'max_gamma_dif': 4.5214498811674275e-11}
+18/05/2022 18:08:56 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500704 = 48889.011842060776
+18/05/2022 18:08:56 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2503306
+18/05/2022 18:08:57 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 965, 'delta': 9.483075852356748e-10, 'max_gamma_dif': 4.9506843069480055e-11}
+18/05/2022 18:08:57 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2503306 = 44685.01055135078
+18/05/2022 18:08:57 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2503302
+18/05/2022 18:08:57 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 945, 'delta': 2.49019590743965e-13, 'max_gamma_dif': 9.506075926424273e-10}
+18/05/2022 18:08:57 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2503302 = 109838.03759459572
+18/05/2022 18:08:57 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2503603
+18/05/2022 18:08:57 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 977, 'delta': 9.487155589203786e-10, 'max_gamma_dif': 3.460121078546763e-11}
+18/05/2022 18:08:57 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2503603 = 65172.01433687056
+18/05/2022 18:08:57 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2503900
+18/05/2022 18:08:57 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 939, 'delta': 1.9638225618379764e-13, 'max_gamma_dif': 9.916940602039404e-10}
+18/05/2022 18:08:57 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2503900 = 66172.01730296569
+18/05/2022 18:08:57 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2504700
+18/05/2022 18:08:58 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 936, 'delta': 9.827772850842502e-10, 'max_gamma_dif': 1.6964440963107563e-10}
+18/05/2022 18:08:58 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2504700 = 50570.011601872015
+18/05/2022 18:08:58 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2504303
+18/05/2022 18:08:58 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 940, 'delta': 9.154986443370702e-10, 'max_gamma_dif': 7.68648478199907e-10}
+18/05/2022 18:08:58 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2504303 = 56609.01425572818
+18/05/2022 18:08:58 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2501900
+18/05/2022 18:08:58 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 938, 'delta': 8.64920964173957e-14, 'max_gamma_dif': 9.63572777124e-10}
+18/05/2022 18:08:58 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2501900 = 65683.01958939474
+18/05/2022 18:08:58 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500302
+18/05/2022 18:08:59 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 977, 'delta': 9.868524757606386e-10, 'max_gamma_dif': 3.675570958705521e-11}
+18/05/2022 18:08:59 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500302 = 61650.01469806659
+18/05/2022 18:08:59 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2501400
+18/05/2022 18:08:59 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 939, 'delta': 1.3402768916809393e-13, 'max_gamma_dif': 9.330909378491015e-10}
+18/05/2022 18:08:59 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2501400 = 55398.01470319853
+18/05/2022 18:08:59 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2502800
+18/05/2022 18:08:59 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 938, 'delta': 3.136755086064952e-13, 'max_gamma_dif': 9.97968152560702e-10}
+18/05/2022 18:08:59 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2502800 = 68556.0165528088
+18/05/2022 18:08:59 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500507
+18/05/2022 18:08:59 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 975, 'delta': 9.91595991081673e-10, 'max_gamma_dif': 4.636602213281549e-11}
+18/05/2022 18:08:59 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500507 = 64039.014404172776
+18/05/2022 18:08:59 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2504902
+18/05/2022 18:09:00 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 972, 'delta': 9.437110587933778e-10, 'max_gamma_dif': 4.445155354915187e-11}
+18/05/2022 18:09:00 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2504902 = 49948.01284361167
+18/05/2022 18:09:00 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2502400
+18/05/2022 18:09:00 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 939, 'delta': 1.3340244660578102e-13, 'max_gamma_dif': 9.501475162210227e-10}
+18/05/2022 18:09:00 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2502400 = 53794.014279313174
+18/05/2022 18:09:00 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500303
+18/05/2022 18:09:00 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 943, 'delta': 1.0225467857432474e-10, 'max_gamma_dif': 9.46888567554538e-10}
+18/05/2022 18:09:00 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500303 = 58605.01452518612
+18/05/2022 18:09:00 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2501000
+18/05/2022 18:09:01 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 941, 'delta': 1.995987916015261e-13, 'max_gamma_dif': 9.271265977162102e-10}
+18/05/2022 18:09:01 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2501000 = 65035.017496139575
+18/05/2022 18:09:01 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500508
+18/05/2022 18:09:01 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 976, 'delta': 9.273111891887523e-10, 'max_gamma_dif': 3.49424933432374e-11}
+18/05/2022 18:09:01 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500508 = 59149.01500075789
+18/05/2022 18:09:01 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500506
+18/05/2022 18:09:01 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 942, 'delta': 8.409434764706186e-14, 'max_gamma_dif': 9.134299983060146e-10}
+18/05/2022 18:09:01 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500506 = 61443.021402241604
+18/05/2022 18:09:01 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2503304
+18/05/2022 18:09:02 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 935, 'delta': 8.589795541524837e-14, 'max_gamma_dif': 9.569518510943453e-10}
+18/05/2022 18:09:02 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2503304 = 57411.016588658626
+18/05/2022 18:09:02 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2504901
+18/05/2022 18:09:02 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 963, 'delta': 9.247921755544613e-10, 'max_gamma_dif': 7.969402915364299e-11}
+18/05/2022 18:09:02 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2504901 = 49633.01377149957
+18/05/2022 18:09:02 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500300
+18/05/2022 18:09:02 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 932, 'delta': 2.415194867893146e-13, 'max_gamma_dif': 9.915313015085303e-10}
+18/05/2022 18:09:02 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500300 = 79304.02285403424
+18/05/2022 18:09:02 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2503301
+18/05/2022 18:09:03 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 948, 'delta': 1.2753143329467365e-13, 'max_gamma_dif': 9.644942622344388e-10}
+18/05/2022 18:09:03 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2503301 = 69614.02058825367
+18/05/2022 18:09:03 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2503305
+18/05/2022 18:09:03 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 971, 'delta': 9.470834198759503e-10, 'max_gamma_dif': 3.477329535428453e-11}
+18/05/2022 18:09:03 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2503305 = 62713.014210077316
+18/05/2022 18:09:03 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2503602
+18/05/2022 18:09:03 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 937, 'delta': 1.0585558713931385e-13, 'max_gamma_dif': 9.543674739376229e-10}
+18/05/2022 18:09:03 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2503602 = 54863.01598861697
+18/05/2022 18:09:03 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2504000
+18/05/2022 18:09:03 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 936, 'delta': 8.730053716969173e-14, 'max_gamma_dif': 9.128784395073808e-10}
+18/05/2022 18:09:03 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2504000 = 49006.01431278038
+18/05/2022 18:09:03 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2503500
+18/05/2022 18:09:04 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 941, 'delta': 7.633948343150953e-14, 'max_gamma_dif': 9.555807256589333e-10}
+18/05/2022 18:09:04 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2503500 = 45440.01427392528
+18/05/2022 18:09:04 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500503
+18/05/2022 18:09:04 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 938, 'delta': 9.851057168065302e-14, 'max_gamma_dif': 9.78920722261023e-10}
+18/05/2022 18:09:04 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500503 = 63893.0215311561
+18/05/2022 18:09:04 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500505
+18/05/2022 18:09:04 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 974, 'delta': 9.763257890527377e-10, 'max_gamma_dif': 3.368683110238635e-11}
+18/05/2022 18:09:04 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500505 = 63011.01439306086
+18/05/2022 18:09:04 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2503400
+18/05/2022 18:09:05 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 939, 'delta': 1.3968051812563887e-12, 'max_gamma_dif': 9.486840202299618e-10}
+18/05/2022 18:09:05 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2503400 = 67729.0169100879
+18/05/2022 18:09:05 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500504
+18/05/2022 18:09:05 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 937, 'delta': 9.492170642880275e-14, 'max_gamma_dif': 9.864842276385843e-10}
+18/05/2022 18:09:05 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500504 = 69151.02088109037
+18/05/2022 18:09:05 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500100
+18/05/2022 18:09:05 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 964, 'delta': 9.278943909282598e-10, 'max_gamma_dif': 7.489986408870664e-11}
+18/05/2022 18:09:05 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500100 = 63347.01397472054
+18/05/2022 18:09:05 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500200
+18/05/2022 18:09:06 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 967, 'delta': 9.37060211560557e-10, 'max_gamma_dif': 6.083311632210098e-11}
+18/05/2022 18:09:06 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500200 = 53938.013503001755
+18/05/2022 18:09:06 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500400
+18/05/2022 18:09:06 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 967, 'delta': 9.842120065799334e-10, 'max_gamma_dif': 4.865929881248121e-11}
+18/05/2022 18:09:06 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500400 = 45148.01115541146
+18/05/2022 18:09:06 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500501
+18/05/2022 18:09:06 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 941, 'delta': 1.904649497035646e-13, 'max_gamma_dif': 9.21505538542533e-10}
+18/05/2022 18:09:06 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500501 = 53573.01315065018
+18/05/2022 18:09:06 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500701
+18/05/2022 18:09:06 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 977, 'delta': 9.949272259031935e-10, 'max_gamma_dif': 3.753153343666327e-11}
+18/05/2022 18:09:06 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500701 = 89762.0234200834
+18/05/2022 18:09:06 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500702
+18/05/2022 18:09:07 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 962, 'delta': 9.430008342094077e-10, 'max_gamma_dif': 1.282380868161681e-10}
+18/05/2022 18:09:07 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500702 = 50644.01274611708
+18/05/2022 18:09:07 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500703
+18/05/2022 18:09:07 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 965, 'delta': 9.402885812467758e-10, 'max_gamma_dif': 8.10540523588088e-11}
+18/05/2022 18:09:07 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500703 = 101627.02359626669
+18/05/2022 18:09:07 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2503303
+18/05/2022 18:09:07 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 946, 'delta': 1.6101405922850026e-13, 'max_gamma_dif': 9.509575349397892e-10}
+18/05/2022 18:09:07 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2503303 = 74608.0193931277
+18/05/2022 18:09:07 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2504903
+18/05/2022 18:09:08 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 973, 'delta': 9.754404192587112e-10, 'max_gamma_dif': 4.143840826031919e-11}
+18/05/2022 18:09:08 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2504903 = 61769.01497566903
+18/05/2022 18:09:08 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2504800
+18/05/2022 18:09:08 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 897, 'delta': 5.973001360914211e-10, 'max_gamma_dif': 4.844019629857144e-10}
+18/05/2022 18:09:08 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2504800 = 45884.00974434036
+18/05/2022 18:09:08 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2504500
+18/05/2022 18:09:08 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 967, 'delta': 9.265534672281361e-10, 'max_gamma_dif': 5.83637582707297e-11}
+18/05/2022 18:09:08 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2504500 = 52374.012351008896
+18/05/2022 18:09:08 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2504301
+18/05/2022 18:09:09 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 968, 'delta': 9.570375130954649e-10, 'max_gamma_dif': 6.684608422347083e-11}
+18/05/2022 18:09:09 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2504301 = 50656.012775351366
+18/05/2022 18:09:09 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2504302
+18/05/2022 18:09:09 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 953, 'delta': 9.610131258483423e-10, 'max_gamma_dif': 5.4430682183692625e-11}
+18/05/2022 18:09:09 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2504302 = 45551.01002943489
+18/05/2022 18:09:09 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2504200
+18/05/2022 18:09:09 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 964, 'delta': 9.69215489228022e-10, 'max_gamma_dif': 9.298628533827014e-11}
+18/05/2022 18:09:09 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2504200 = 58465.01397868754
+18/05/2022 18:09:09 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2503601
+18/05/2022 18:09:09 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 939, 'delta': 1.4400601924694933e-13, 'max_gamma_dif': 9.778806653315542e-10}
+18/05/2022 18:09:09 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2503601 = 57274.01560210924
+18/05/2022 18:09:09 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 2500304
+18/05/2022 18:09:10 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 981, 'delta': 9.185388458913552e-10, 'max_gamma_dif': 2.7390978374342012e-11}
+18/05/2022 18:09:10 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 2500304 = 79829.01913044992
+18/05/2022 18:09:10 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 4400400
+18/05/2022 18:09:10 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 941, 'delta': 1.5629184030882923e-13, 'max_gamma_dif': 9.870264605638113e-10}
+18/05/2022 18:09:10 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 4400400 = 63602.01513314357
+18/05/2022 18:09:10 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 4400201
+18/05/2022 18:09:10 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 930, 'delta': 2.6354342980993456e-13, 'max_gamma_dif': 9.455138894054471e-10}
+18/05/2022 18:09:10 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 4400201 = 74253.01716242277
+18/05/2022 18:09:10 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 4400101
+18/05/2022 18:09:11 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 937, 'delta': 1.8038334032682862e-13, 'max_gamma_dif': 9.274534473746598e-10}
+18/05/2022 18:09:11 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 4400101 = 66095.01582278841
+18/05/2022 18:09:11 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 4400102
+18/05/2022 18:09:11 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 973, 'delta': 9.289662594724746e-10, 'max_gamma_dif': 2.843059121460101e-11}
+18/05/2022 18:09:11 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 4400102 = 80788.01786079761
+18/05/2022 18:09:11 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 4400104
+18/05/2022 18:09:11 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 946, 'delta': 9.135186621635943e-10, 'max_gamma_dif': 1.385094261507902e-10}
+18/05/2022 18:09:11 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 4400104 = 52011.01198093659
+18/05/2022 18:09:11 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 4400300
+18/05/2022 18:09:11 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 916, 'delta': 9.305028403123659e-14, 'max_gamma_dif': 9.974858716788049e-10}
+18/05/2022 18:09:11 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 4400300 = 54090.014183115454
+18/05/2022 18:09:11 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 4400103
+18/05/2022 18:09:12 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 942, 'delta': 2.563264606297454e-13, 'max_gamma_dif': 9.92877113858981e-10}
+18/05/2022 18:09:12 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 4400103 = 81936.02333130535
+18/05/2022 18:09:12 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 3300500
+18/05/2022 18:09:12 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 967, 'delta': 9.563814310164473e-10, 'max_gamma_dif': 5.49917222869567e-10}
+18/05/2022 18:09:12 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 3300500 = 5093.0011796392855
+18/05/2022 18:09:12 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 3300300
+18/05/2022 18:09:12 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 965, 'delta': 9.184144424101843e-15, 'max_gamma_dif': 9.461195160653801e-10}
+18/05/2022 18:09:12 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 3300300 = 4143.001005940642
+18/05/2022 18:09:12 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 3301000
+18/05/2022 18:09:13 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 934, 'delta': 2.459776707289938e-13, 'max_gamma_dif': 9.644527398933178e-10}
+18/05/2022 18:09:13 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 3301000 = 81803.02218135961
+18/05/2022 18:09:13 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 3300900
+18/05/2022 18:09:13 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 919, 'delta': 1.389026222382148e-13, 'max_gamma_dif': 9.140797008200252e-10}
+18/05/2022 18:09:13 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 3300900 = 50738.01347175389
+18/05/2022 18:09:13 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 3300600
+18/05/2022 18:09:13 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 943, 'delta': 5.205823288201063e-14, 'max_gamma_dif': 9.584564253373173e-10}
+18/05/2022 18:09:13 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 3300600 = 52172.0131428862
+18/05/2022 18:09:13 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 3300700
+18/05/2022 18:09:14 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 941, 'delta': 5.843479415258084e-12, 'max_gamma_dif': 9.38550792639603e-10}
+18/05/2022 18:09:14 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 3300700 = 64094.0157968986
+18/05/2022 18:09:14 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 3300400
+18/05/2022 18:09:14 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 968, 'delta': 9.90500529802115e-10, 'max_gamma_dif': 4.76594319565038e-10}
+18/05/2022 18:09:14 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 3300400 = 6309.0013954761835
+18/05/2022 18:09:14 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 3300800
+18/05/2022 18:09:14 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 929, 'delta': 1.5874299510821226e-13, 'max_gamma_dif': 9.574883108598442e-10}
+18/05/2022 18:09:14 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 3300800 = 46349.01320750093
+18/05/2022 18:09:14 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'initial_seed_balancing' : 20.085 seconds (0.3 minutes)
+18/05/2022 18:09:14 - DEBUG - activitysim.core.pipeline - add_checkpoint initial_seed_balancing timestamp 2022-05-18 18:09:14.734663
+18/05/2022 18:09:14 - DEBUG - activitysim.core.pipeline - add_checkpoint 'initial_seed_balancing' table 'PUMA_weights' (6250, 4) 200.1 KB
+18/05/2022 18:09:14 - INFO - activitysim.core.pipeline - #run_model running step meta_control_factoring
+18/05/2022 18:09:14 - WARNING - populationsim.steps.meta_control_factoring - meta_control_factoring: no meta targets so nothing to do
+18/05/2022 18:09:14 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'meta_control_factoring' : 0.003 seconds (0.0 minutes)
+18/05/2022 18:09:14 - DEBUG - activitysim.core.pipeline - add_checkpoint meta_control_factoring timestamp 2022-05-18 18:09:14.795291
+18/05/2022 18:09:14 - INFO - activitysim.core.pipeline - #run_model running step final_seed_balancing
+18/05/2022 18:09:14 - WARNING - populationsim.steps.final_seed_balancing - no need for final_seed_balancing because no meta controls
+18/05/2022 18:09:14 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'final_seed_balancing' : 0.003 seconds (0.0 minutes)
+18/05/2022 18:09:14 - DEBUG - activitysim.core.pipeline - add_checkpoint final_seed_balancing timestamp 2022-05-18 18:09:14.862148
+18/05/2022 18:09:14 - DEBUG - activitysim.core.pipeline - rewrap table PUMA_weights inplace=True
+18/05/2022 18:09:14 - DEBUG - activitysim.core.pipeline - add_checkpoint 'final_seed_balancing' table 'PUMA_weights' (6250, 5) 250.1 KB
+18/05/2022 18:09:14 - INFO - activitysim.core.pipeline - #run_model running step integerize_final_seed_weights
+18/05/2022 18:09:14 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2501600
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 10 out of 95 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2501600: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2501902
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 8 out of 91 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2501902: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2501901
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 8 out of 96 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2501901: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500301
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 95 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500301: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500502
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 98 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500502: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2501300
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 3 out of 87 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2501300: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500704
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 12 out of 95 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500704: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2503306
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 4 out of 96 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503306: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2503302
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 97 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2503603
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 93 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503603: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2503900
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 4 out of 89 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503900: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2504700
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 94 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2504700: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2504303
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 9 out of 93 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2504303: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2501900
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 4 out of 97 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2501900: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500302
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 8 out of 95 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500302: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2501400
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 8 out of 91 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2501400: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2502800
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 4 out of 91 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2502800: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500507
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 9 out of 96 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500507: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2504902
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 88 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2504902: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2502400
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 91 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2502400: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500303
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 90 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500303: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2501000
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 92 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2501000: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500508
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 92 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500508: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500506
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 88 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500506: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2503304
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 100 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503304: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2504901
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 90 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2504901: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500300
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 8 out of 99 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500300: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2503301
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 4 out of 97 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503301: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2503305
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 10 out of 95 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503305: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2503602
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 93 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503602: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2504000
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 96 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2504000: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2503500
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 81 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503500: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500503
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 92 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500503: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500505
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 87 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500505: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2503400
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 94 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503400: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500504
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 2 out of 94 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500504: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500100
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 8 out of 95 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500100: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500200
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 10 out of 102 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500200: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500400
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 92 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500400: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500501
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 83 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500501: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500701
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 99 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500701: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500702
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 3 out of 90 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500702: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500703
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 97 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500703: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2503303
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 98 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503303: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2504903
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 92 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2504903: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2504800
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 91 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2504800: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2504500
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 99 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2504500: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2504301
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 87 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2504301: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2504302
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 10 out of 96 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2504302: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2504200
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 93 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2504200: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2503601
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 3 out of 88 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503601: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 2500304
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 98 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2500304: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 4400400
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 93 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_4400400: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 4400201
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 3 out of 94 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_4400201: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 4400101
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 97 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_4400101: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 4400102
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 10 out of 100 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_4400102: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 4400104
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 94 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_4400104: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 4400300
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 98 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_4400300: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 4400103
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 97 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_4400103: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 3300500
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 94 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_3300500: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 3300300
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 94 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_3300300: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 3301000
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 4 out of 93 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_3301000: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 3300900
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 7 out of 89 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_3300900: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 3300600
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 2 out of 89 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_3300600: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 3300700
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 86 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_3300700: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 3300400
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 8 out of 90 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_3300400: OPTIMAL
+18/05/2022 18:09:15 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 3300800
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer: 3 out of 94 different from round
+18/05/2022 18:09:15 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_3300800: OPTIMAL
+18/05/2022 18:09:15 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'integerize_final_seed_weights' : 0.671 seconds (0.0 minutes)
+18/05/2022 18:09:15 - DEBUG - activitysim.core.pipeline - add_checkpoint integerize_final_seed_weights timestamp 2022-05-18 18:09:15.614733
+18/05/2022 18:09:15 - DEBUG - activitysim.core.pipeline - rewrap table PUMA_weights inplace=True
+18/05/2022 18:09:15 - DEBUG - activitysim.core.pipeline - add_checkpoint 'integerize_final_seed_weights' table 'PUMA_weights' (6250, 6) 300.1 KB
+18/05/2022 18:09:15 - INFO - activitysim.core.pipeline - #run_model running step sub_balancing
+18/05/2022 18:09:15 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2501600, PUMA 2501600.0
+18/05/2022 18:09:15 - DEBUG - populationsim.simul_balancer - 95 positive weight rows out of 95
+18/05/2022 18:09:15 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 95 control_count 15 zone_count 112
+18/05/2022 18:09:15 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 332.92506440714067 max_gamma_dif 20.62298744057679
+18/05/2022 18:09:19 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.14691693636714248 max_gamma_dif 10.6950050023138
+18/05/2022 18:09:22 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.2511081424723934 max_gamma_dif 6.4459408312822655
+18/05/2022 18:09:25 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.36826616733448686 max_gamma_dif 2.837968566706386
+18/05/2022 18:09:29 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.39621844682790713 max_gamma_dif 1.6466936708371058
+18/05/2022 18:09:32 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.2334271689816613 max_gamma_dif 0.48223119675219506
+18/05/2022 18:09:35 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 0.03819912211809707 max_gamma_dif 0.056717536013290326
+18/05/2022 18:09:39 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 0.026371411334865643 max_gamma_dif 0.10255161027247373
+18/05/2022 18:09:42 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 0.009211479422004901 max_gamma_dif 0.12413866638358773
+18/05/2022 18:09:46 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 0.0003772522413558831 max_gamma_dif 0.12924242844649436
+18/05/2022 18:09:49 - DEBUG - populationsim.steps.sub_balancing - PUMA 2501600.0 converged False iter 999
+18/05/2022 18:09:50 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:09:50 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_2501600.0 status OPTIMAL. 
+18/05/2022 18:09:50 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2501902, PUMA 2501902.0
+18/05/2022 18:09:50 - DEBUG - populationsim.simul_balancer - 91 positive weight rows out of 91
+18/05/2022 18:09:50 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 91 control_count 15 zone_count 88
+18/05/2022 18:09:50 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 278.35519822734886 max_gamma_dif 5.6025215960486845
+18/05/2022 18:09:52 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.06267714772893264 max_gamma_dif 2.3851031041701036
+18/05/2022 18:09:55 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.10503034930113876 max_gamma_dif 1.7128586511886832
+18/05/2022 18:09:58 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.15184241986463182 max_gamma_dif 0.9539743847706581
+18/05/2022 18:10:00 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.16239958294568027 max_gamma_dif 0.3555980811005116
+18/05/2022 18:10:03 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.09612878608983626 max_gamma_dif 0.1380520061488013
+18/05/2022 18:10:06 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 0.015395460476140337 max_gamma_dif 0.043288395255863366
+18/05/2022 18:10:08 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 0.014545007552884145 max_gamma_dif 0.0702391246573888
+18/05/2022 18:10:11 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 0.005195623857249044 max_gamma_dif 0.08984594624583186
+18/05/2022 18:10:13 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 0.00030233844619680924 max_gamma_dif 0.0943351049133363
+18/05/2022 18:10:16 - DEBUG - populationsim.steps.sub_balancing - PUMA 2501902.0 converged False iter 999
+18/05/2022 18:10:17 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:10:17 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_2501902.0 status OPTIMAL. 
+18/05/2022 18:10:17 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2501901, PUMA 2501901.0
+18/05/2022 18:10:17 - DEBUG - populationsim.simul_balancer - 95 positive weight rows out of 96
+18/05/2022 18:10:17 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 95 control_count 15 zone_count 111
+18/05/2022 18:10:17 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 338.42535601889495 max_gamma_dif 42.421728592284026
+18/05/2022 18:10:20 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.1401419359163611 max_gamma_dif 17.375227164891584
+18/05/2022 18:10:23 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.18875955771469363 max_gamma_dif 9.771372921056226
+18/05/2022 18:10:27 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.23965257426505845 max_gamma_dif 4.210769782864649
+18/05/2022 18:10:30 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.22080066446143992 max_gamma_dif 2.6807724957797228
+18/05/2022 18:10:33 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.10609501209748283 max_gamma_dif 0.6463033618448015
+18/05/2022 18:10:37 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 0.015525840591741516 max_gamma_dif 0.1276025116470405
+18/05/2022 18:10:40 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 0.004771833544934073 max_gamma_dif 0.10551038827085724
+18/05/2022 18:10:43 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 0.0021586331058100765 max_gamma_dif 0.03058886081570189
+18/05/2022 18:10:47 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 0.00014739478746117073 max_gamma_dif 0.01121515888880742
+18/05/2022 18:10:51 - DEBUG - populationsim.steps.sub_balancing - PUMA 2501901.0 converged False iter 999
+18/05/2022 18:10:51 - INFO - populationsim.multi_integerizer - omitting 1 zero weight rows out of 96
+18/05/2022 18:10:51 - INFO - populationsim.multi_integerizer - restoring 1 zero weight rows
+18/05/2022 18:10:51 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:10:51 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_2501901.0 status OPTIMAL. 
+18/05/2022 18:10:51 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2500301, PUMA 2500301.0
+18/05/2022 18:10:51 - DEBUG - populationsim.simul_balancer - 95 positive weight rows out of 95
+18/05/2022 18:10:51 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 95 control_count 15 zone_count 83
+18/05/2022 18:10:51 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 278.22939288629595 max_gamma_dif 19.315581543316814
+18/05/2022 18:10:54 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.12882703187463967 max_gamma_dif 3.5397088528787384
+18/05/2022 18:10:56 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.2186273075400519 max_gamma_dif 2.4398452309642504
+18/05/2022 18:10:59 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.3151313641614015 max_gamma_dif 1.2836182322924632
+18/05/2022 18:11:02 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.3271002337004272 max_gamma_dif 0.5139038569945774
+18/05/2022 18:11:04 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.18143939172683654 max_gamma_dif 0.23400270204004103
+18/05/2022 18:11:07 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 0.02505242315104949 max_gamma_dif 0.035277885591393554
+18/05/2022 18:11:09 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 0.011850875982780998 max_gamma_dif 0.028404055963113573
+18/05/2022 18:11:12 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 0.00510151423822652 max_gamma_dif 0.005593848706874294
+18/05/2022 18:11:15 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 0.00019517422213160353 max_gamma_dif 0.0001264572231169936
+18/05/2022 18:11:17 - DEBUG - populationsim.steps.sub_balancing - PUMA 2500301.0 converged False iter 999
+18/05/2022 18:11:17 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:11:17 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_2500301.0 status OPTIMAL. 
+18/05/2022 18:11:17 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2500502, PUMA 2500502.0
+18/05/2022 18:11:17 - DEBUG - populationsim.simul_balancer - 98 positive weight rows out of 98
+18/05/2022 18:11:17 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 98 control_count 15 zone_count 48
+18/05/2022 18:11:17 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 196.7173164166924 max_gamma_dif 21.404305047443934
+18/05/2022 18:11:19 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.20306870255282092 max_gamma_dif 13.346875321414354
+18/05/2022 18:11:20 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.33167459712281516 max_gamma_dif 7.797333694118901
+18/05/2022 18:11:22 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.47033106645343964 max_gamma_dif 3.2937246237936
+18/05/2022 18:11:23 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.46265998506710965 max_gamma_dif 1.0054650560941782
+18/05/2022 18:11:25 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.2410992466970706 max_gamma_dif 0.41657716158023894
+18/05/2022 18:11:26 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 0.028951918677491837 max_gamma_dif 0.07153586649059607
+18/05/2022 18:11:28 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 0.014303946677221359 max_gamma_dif 0.05948198874571209
+18/05/2022 18:11:29 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 0.006506101332763347 max_gamma_dif 0.011851580897340508
+18/05/2022 18:11:31 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 0.00027961913074688505 max_gamma_dif 0.000294204625269634
+18/05/2022 18:11:32 - DEBUG - populationsim.steps.sub_balancing - PUMA 2500502.0 converged False iter 999
+18/05/2022 18:11:32 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:11:32 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_2500502.0 status OPTIMAL. 
+18/05/2022 18:11:32 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2501300, PUMA 2501300.0
+18/05/2022 18:11:32 - DEBUG - populationsim.simul_balancer - 44 positive weight rows out of 87
+18/05/2022 18:11:32 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 44 control_count 15 zone_count 88
+18/05/2022 18:11:32 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 342.7294351178629 max_gamma_dif 213.400153369794
+18/05/2022 18:11:35 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.00934564906966512 max_gamma_dif 122.03357971317708
+18/05/2022 18:11:37 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.012837326705999337 max_gamma_dif 51.970676183613314
+18/05/2022 18:11:40 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.012206746034873428 max_gamma_dif 14.38915248020419
+18/05/2022 18:11:43 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.005935009963228107 max_gamma_dif 2.5451352725333845
+18/05/2022 18:11:45 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.0021874088626306896 max_gamma_dif 0.766490425410487
+18/05/2022 18:11:48 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 0.0020363560095901134 max_gamma_dif 0.063463676467302
+18/05/2022 18:11:50 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 0.0012000637846883778 max_gamma_dif 0.025712577708968398
+18/05/2022 18:11:53 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 0.00023141548401936496 max_gamma_dif 0.039912708936156616
+18/05/2022 18:11:55 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 5.215863571492887e-06 max_gamma_dif 0.04221077044757782
+18/05/2022 18:11:58 - DEBUG - populationsim.steps.sub_balancing - PUMA 2501300.0 converged False iter 999
+18/05/2022 18:11:58 - INFO - populationsim.multi_integerizer - omitting 43 zero weight rows out of 87
+18/05/2022 18:11:58 - INFO - populationsim.multi_integerizer - restoring 43 zero weight rows
+18/05/2022 18:11:58 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:11:58 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_2501300.0 status OPTIMAL. 
+18/05/2022 18:11:58 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2500704, PUMA 2500704.0
+18/05/2022 18:11:58 - DEBUG - populationsim.simul_balancer - 94 positive weight rows out of 95
+18/05/2022 18:11:58 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 94 control_count 15 zone_count 48
+18/05/2022 18:11:58 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 289.5277721435481 max_gamma_dif 8.010824751390759
+18/05/2022 18:12:00 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.1459550687788813 max_gamma_dif 4.239778213005172
+18/05/2022 18:12:01 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.2518988506943141 max_gamma_dif 2.8668456656557013
+18/05/2022 18:12:03 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.37243477712490897 max_gamma_dif 1.4695911150086252
+18/05/2022 18:12:04 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.4023257917968536 max_gamma_dif 0.5367521665531696
+18/05/2022 18:12:06 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.2288245319158491 max_gamma_dif 0.25044907030042873
+18/05/2022 18:12:07 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 0.03449667266413337 max_gamma_dif 0.039246136343689786
+18/05/2022 18:12:08 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 0.019229601145098148 max_gamma_dif 0.04970377307509222
+18/05/2022 18:12:10 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 0.007615809490559825 max_gamma_dif 0.04027039122806886
+18/05/2022 18:12:11 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 0.00013599482910337074 max_gamma_dif 0.037882019738125994
+18/05/2022 18:12:13 - DEBUG - populationsim.steps.sub_balancing - PUMA 2500704.0 converged False iter 999
+18/05/2022 18:12:13 - INFO - populationsim.multi_integerizer - omitting 1 zero weight rows out of 95
+18/05/2022 18:12:13 - INFO - populationsim.multi_integerizer - restoring 1 zero weight rows
+18/05/2022 18:12:13 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:12:13 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_2500704.0 status OPTIMAL. 
+18/05/2022 18:12:13 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2503306, PUMA 2503306.0
+18/05/2022 18:12:13 - DEBUG - populationsim.simul_balancer - 96 positive weight rows out of 96
+18/05/2022 18:12:13 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 96 control_count 15 zone_count 54
+18/05/2022 18:12:13 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 238.97200103552828 max_gamma_dif 44.79943392656859
+18/05/2022 18:12:15 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.10458578237713494 max_gamma_dif 18.858198865979475
+18/05/2022 18:12:16 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.1829673881426974 max_gamma_dif 10.476219733731376
+18/05/2022 18:12:18 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.2759326363091869 max_gamma_dif 4.145648973113201
+18/05/2022 18:12:20 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.32009145193346084 max_gamma_dif 1.0963939552315498
+18/05/2022 18:12:21 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.21446796390468129 max_gamma_dif 0.42510977306302467
+18/05/2022 18:12:23 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 0.04332444751526588 max_gamma_dif 0.08609133585069828
+18/05/2022 18:12:25 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 0.02078191400863375 max_gamma_dif 0.12759188749534878
+18/05/2022 18:12:26 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 0.008662267843768763 max_gamma_dif 0.16451647595698637
+18/05/2022 18:12:28 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 0.00042292174867386155 max_gamma_dif 0.17001044137711108
+18/05/2022 18:12:30 - DEBUG - populationsim.steps.sub_balancing - PUMA 2503306.0 converged False iter 999
+18/05/2022 18:12:30 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:12:30 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_2503306.0 status OPTIMAL. 
+18/05/2022 18:12:30 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2503302, PUMA 2503302.0
+18/05/2022 18:12:30 - DEBUG - populationsim.simul_balancer - 47 positive weight rows out of 97
+18/05/2022 18:12:30 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 47 control_count 15 zone_count 144
+18/05/2022 18:12:30 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 1478.3915663306648 max_gamma_dif 583.7579580181208
+18/05/2022 18:12:35 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.18500229234113588 max_gamma_dif 300.0663380419427
+18/05/2022 18:12:39 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.14485625623839693 max_gamma_dif 125.32793921819038
+18/05/2022 18:12:43 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.059680701027812914 max_gamma_dif 32.71690954947904
+18/05/2022 18:12:47 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.05095270263714552 max_gamma_dif 5.017497712613416
+18/05/2022 18:12:51 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.03918465387602316 max_gamma_dif 1.4090748408918317
+18/05/2022 18:12:56 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 0.03542304448162375 max_gamma_dif 0.32212942169498204
+18/05/2022 18:13:00 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 0.03142445394595844 max_gamma_dif 0.21951789208359274
+18/05/2022 18:13:04 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 0.011479265846380853 max_gamma_dif 0.0764587549932565
+18/05/2022 18:13:09 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 0.0005987147034152543 max_gamma_dif 0.05220268097947667
+18/05/2022 18:13:13 - DEBUG - populationsim.steps.sub_balancing - PUMA 2503302.0 converged False iter 999
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - WARNING - populationsim.multi_integerizer - do_simul_integerizing failed for PUMA_2503302.0 status INFEASIBLE. 
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 2.0 zone_name TAZ_2.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 36 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_2.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 3.0 zone_name TAZ_3.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 21 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_3.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 4.0 zone_name TAZ_4.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 30 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_4.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 5.0 zone_name TAZ_5.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 23 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_5.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 6.0 zone_name TAZ_6.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 21 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_6.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 7.0 zone_name TAZ_7.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 25 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_7.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 8.0 zone_name TAZ_8.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 27 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_8.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 9.0 zone_name TAZ_9.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 29 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_9.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 10.0 zone_name TAZ_10.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 32 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_10.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 11.0 zone_name TAZ_11.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 36 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_11.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 12.0 zone_name TAZ_12.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 14 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_12.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 13.0 zone_name TAZ_13.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 37 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_13.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 14.0 zone_name TAZ_14.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 15 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_14.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 17.0 zone_name TAZ_17.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 15 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_17.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 18.0 zone_name TAZ_18.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 9 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_18.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 19.0 zone_name TAZ_19.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 25 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_19.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 20.0 zone_name TAZ_20.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 9 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_20.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 21.0 zone_name TAZ_21.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 21 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_21.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 23.0 zone_name TAZ_23.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 1 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_23.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 24.0 zone_name TAZ_24.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 14 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_24.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 25.0 zone_name TAZ_25.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 24 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_25.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 26.0 zone_name TAZ_26.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer: 30 out of 47 different from round
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_26.0: OPTIMAL
+18/05/2022 18:13:13 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 27.0 zone_name TAZ_27.0
+18/05/2022 18:13:13 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 26 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_27.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 28.0 zone_name TAZ_28.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 27 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_28.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 30.0 zone_name TAZ_30.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 40 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_30.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 31.0 zone_name TAZ_31.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 8 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_31.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 32.0 zone_name TAZ_32.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 29 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_32.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 33.0 zone_name TAZ_33.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_33.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 34.0 zone_name TAZ_34.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 20 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_34.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 36.0 zone_name TAZ_36.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_36.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 37.0 zone_name TAZ_37.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 6 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_37.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 39.0 zone_name TAZ_39.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 11 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_39.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 40.0 zone_name TAZ_40.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 1 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_40.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 41.0 zone_name TAZ_41.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 0 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_41.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 45.0 zone_name TAZ_45.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 0 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_45.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 46.0 zone_name TAZ_46.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 1 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_46.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 47.0 zone_name TAZ_47.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 17 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_47.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 48.0 zone_name TAZ_48.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 5 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_48.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 50.0 zone_name TAZ_50.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 18 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_50.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 51.0 zone_name TAZ_51.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 3 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_51.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 52.0 zone_name TAZ_52.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 24 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_52.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 55.0 zone_name TAZ_55.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 0 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_55.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 61.0 zone_name TAZ_61.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 15 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_61.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 62.0 zone_name TAZ_62.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 27 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_62.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 64.0 zone_name TAZ_64.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 83 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 3 out of 14 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_64.0: INFEASIBLE
+18/05/2022 18:13:14 - ERROR - populationsim.integerizer - Integerizer failed for PUMA_2503302.0_TAZ_64.0 status INFEASIBLE. Returning smart-rounded original weights
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 65.0 zone_name TAZ_65.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 3 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_65.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 66.0 zone_name TAZ_66.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 9 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_66.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 69.0 zone_name TAZ_69.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 23 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_69.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 70.0 zone_name TAZ_70.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 19 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_70.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 72.0 zone_name TAZ_72.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 13 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_72.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 73.0 zone_name TAZ_73.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 14 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_73.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 74.0 zone_name TAZ_74.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 26 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_74.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 75.0 zone_name TAZ_75.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 28 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_75.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 76.0 zone_name TAZ_76.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 28 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_76.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 77.0 zone_name TAZ_77.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 22 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_77.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 78.0 zone_name TAZ_78.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 30 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_78.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 79.0 zone_name TAZ_79.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 12 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_79.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 81.0 zone_name TAZ_81.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 16 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_81.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 82.0 zone_name TAZ_82.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 26 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_82.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 83.0 zone_name TAZ_83.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 25 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_83.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 84.0 zone_name TAZ_84.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 37 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_84.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 85.0 zone_name TAZ_85.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 35 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_85.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 86.0 zone_name TAZ_86.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 34 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_86.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 87.0 zone_name TAZ_87.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 24 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_87.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 88.0 zone_name TAZ_88.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 17 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_88.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 89.0 zone_name TAZ_89.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 8 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_89.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 90.0 zone_name TAZ_90.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 10 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_90.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 91.0 zone_name TAZ_91.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 15 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_91.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 92.0 zone_name TAZ_92.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 19 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_92.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 93.0 zone_name TAZ_93.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 10 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_93.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 94.0 zone_name TAZ_94.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 21 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_94.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 95.0 zone_name TAZ_95.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 10 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_95.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 97.0 zone_name TAZ_97.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 2 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_97.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 101.0 zone_name TAZ_101.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 16 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_101.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 102.0 zone_name TAZ_102.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 37 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_102.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 103.0 zone_name TAZ_103.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 38 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_103.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 104.0 zone_name TAZ_104.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 13 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_104.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 105.0 zone_name TAZ_105.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 27 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_105.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 106.0 zone_name TAZ_106.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 26 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_106.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 107.0 zone_name TAZ_107.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 33 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_107.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 108.0 zone_name TAZ_108.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 1 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_108.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 109.0 zone_name TAZ_109.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 28 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_109.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 110.0 zone_name TAZ_110.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 28 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_110.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 111.0 zone_name TAZ_111.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 28 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_111.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 112.0 zone_name TAZ_112.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 29 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_112.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 113.0 zone_name TAZ_113.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 27 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_113.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 114.0 zone_name TAZ_114.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 21 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_114.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 115.0 zone_name TAZ_115.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 25 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_115.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 116.0 zone_name TAZ_116.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 32 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_116.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 117.0 zone_name TAZ_117.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 27 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_117.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 118.0 zone_name TAZ_118.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 28 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_118.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 119.0 zone_name TAZ_119.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 32 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_119.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 120.0 zone_name TAZ_120.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 31 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_120.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 121.0 zone_name TAZ_121.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 31 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_121.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 122.0 zone_name TAZ_122.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 29 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_122.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 123.0 zone_name TAZ_123.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 23 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_123.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 124.0 zone_name TAZ_124.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 24 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_124.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 125.0 zone_name TAZ_125.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 29 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_125.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 126.0 zone_name TAZ_126.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 14 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_126.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 127.0 zone_name TAZ_127.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 34 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_127.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 128.0 zone_name TAZ_128.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 19 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_128.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 129.0 zone_name TAZ_129.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 0 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_129.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 168.0 zone_name TAZ_168.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 33 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_168.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 169.0 zone_name TAZ_169.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 26 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_169.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 170.0 zone_name TAZ_170.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 27 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_170.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 171.0 zone_name TAZ_171.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 25 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_171.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 172.0 zone_name TAZ_172.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 28 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_172.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 173.0 zone_name TAZ_173.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 24 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_173.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 174.0 zone_name TAZ_174.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 28 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_174.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 175.0 zone_name TAZ_175.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 23 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_175.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 176.0 zone_name TAZ_176.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 17 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_176.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 177.0 zone_name TAZ_177.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 29 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_177.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 178.0 zone_name TAZ_178.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 22 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_178.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 179.0 zone_name TAZ_179.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 29 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_179.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 180.0 zone_name TAZ_180.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 27 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_180.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 181.0 zone_name TAZ_181.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 30 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_181.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 183.0 zone_name TAZ_183.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 18 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_183.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 186.0 zone_name TAZ_186.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 25 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_186.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 187.0 zone_name TAZ_187.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 24 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_187.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 188.0 zone_name TAZ_188.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 23 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_188.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 189.0 zone_name TAZ_189.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 22 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_189.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 190.0 zone_name TAZ_190.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 28 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_190.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 191.0 zone_name TAZ_191.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 28 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_191.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 192.0 zone_name TAZ_192.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 11 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_192.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 193.0 zone_name TAZ_193.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 28 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_193.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 194.0 zone_name TAZ_194.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 23 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_194.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 196.0 zone_name TAZ_196.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 20 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_196.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 197.0 zone_name TAZ_197.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 22 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_197.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 198.0 zone_name TAZ_198.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 26 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_198.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 199.0 zone_name TAZ_199.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 21 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_199.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 200.0 zone_name TAZ_200.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 28 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_200.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 201.0 zone_name TAZ_201.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 24 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_201.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 202.0 zone_name TAZ_202.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 9 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_202.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 203.0 zone_name TAZ_203.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 3 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_203.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 204.0 zone_name TAZ_204.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 13 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_204.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 205.0 zone_name TAZ_205.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 27 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_205.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 206.0 zone_name TAZ_206.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 4 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_206.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 312.0 zone_name TAZ_312.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 25 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_312.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 313.0 zone_name TAZ_313.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 27 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_313.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 314.0 zone_name TAZ_314.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 24 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_314.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 315.0 zone_name TAZ_315.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 17 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_315.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 451.0 zone_name TAZ_451.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 27 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_451.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 480.0 zone_name TAZ_480.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 29 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_480.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - sequential_integerizing zone_id 481.0 zone_name TAZ_481.0
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer: 17 out of 47 different from round
+18/05/2022 18:13:14 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_2503302.0_TAZ_481.0: OPTIMAL
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - do_simul_integerizing 1 infeasable subzones for PUMA_2503302.0. 
+18/05/2022 18:13:14 - INFO - populationsim.multi_integerizer - omitting 50 zero weight rows out of 97
+18/05/2022 18:13:15 - INFO - populationsim.multi_integerizer - restoring 50 zero weight rows
+18/05/2022 18:13:15 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:13:15 - INFO - populationsim.multi_integerizer - do_simul_integerizing retry succeeded for PUMA_2503302.0 status OPTIMAL. 
+18/05/2022 18:13:15 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2503603, PUMA 2503603.0
+18/05/2022 18:13:15 - DEBUG - populationsim.simul_balancer - 93 positive weight rows out of 93
+18/05/2022 18:13:15 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 93 control_count 15 zone_count 63
+18/05/2022 18:13:15 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 355.1905130347624 max_gamma_dif 13.011854479422285
+18/05/2022 18:13:17 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.18175447606165865 max_gamma_dif 7.204962815563608
+18/05/2022 18:13:19 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.3202222489802995 max_gamma_dif 4.575213684502463
+18/05/2022 18:13:21 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.500549731122961 max_gamma_dif 2.156869423816391
+18/05/2022 18:13:23 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.6361487821098657 max_gamma_dif 0.6945096023398525
+18/05/2022 18:13:25 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.45683933446787955 max_gamma_dif 0.30096420111822897
+18/05/2022 18:13:26 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 0.0933087309867179 max_gamma_dif 0.0450366589933362
+18/05/2022 18:13:28 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 0.014693284654630021 max_gamma_dif 0.03704225748305423
+18/05/2022 18:13:30 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 0.008543434485561602 max_gamma_dif 0.007596515409918014
+18/05/2022 18:13:32 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 0.00041008076700994975 max_gamma_dif 0.00019084975652039482
+18/05/2022 18:13:34 - DEBUG - populationsim.steps.sub_balancing - PUMA 2503603.0 converged False iter 999
+18/05/2022 18:13:34 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:13:34 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_2503603.0 status OPTIMAL. 
+18/05/2022 18:13:34 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2503900, PUMA 2503900.0
+18/05/2022 18:13:34 - DEBUG - populationsim.simul_balancer - 43 positive weight rows out of 89
+18/05/2022 18:13:34 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 43 control_count 15 zone_count 78
+18/05/2022 18:13:34 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 486.93470868878177 max_gamma_dif 588.3839529566172
+18/05/2022 18:13:37 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.037498211632421986 max_gamma_dif 302.4262763643031
+18/05/2022 18:13:39 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.003911537553383605 max_gamma_dif 126.53718627968193
+18/05/2022 18:13:41 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.0034730268241458307 max_gamma_dif 33.13145303276045
+18/05/2022 18:13:44 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.0015895097447615792 max_gamma_dif 4.4959219880312515
+18/05/2022 18:13:46 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.00021445516825819387 max_gamma_dif 1.0806988951975942
+18/05/2022 18:13:48 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 8.523589775423043e-05 max_gamma_dif 0.1583650943594863
+18/05/2022 18:13:50 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 4.953974125997743e-05 max_gamma_dif 0.04246667862065079
+18/05/2022 18:13:53 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 9.402023268636313e-06 max_gamma_dif 0.007988251197316276
+18/05/2022 18:13:55 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 2.3274435194536634e-07 max_gamma_dif 0.00017215855243402078
+18/05/2022 18:13:57 - DEBUG - populationsim.steps.sub_balancing - PUMA 2503900.0 converged False iter 999
+18/05/2022 18:13:57 - INFO - populationsim.multi_integerizer - omitting 46 zero weight rows out of 89
+18/05/2022 18:13:57 - INFO - populationsim.multi_integerizer - restoring 46 zero weight rows
+18/05/2022 18:13:57 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:13:57 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_2503900.0 status OPTIMAL. 
+18/05/2022 18:13:57 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2504700, PUMA 2504700.0
+18/05/2022 18:13:58 - DEBUG - populationsim.simul_balancer - 94 positive weight rows out of 94
+18/05/2022 18:13:58 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 94 control_count 15 zone_count 102
+18/05/2022 18:13:58 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 204.38097437117082 max_gamma_dif 54.03857966003785
+18/05/2022 18:14:01 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.12943033017313194 max_gamma_dif 34.506055973017624
+18/05/2022 18:14:04 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.20084138043408417 max_gamma_dif 17.492720795012236
+18/05/2022 18:14:07 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.2599844864317304 max_gamma_dif 6.143306958119042
+18/05/2022 18:14:10 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.22524458610767284 max_gamma_dif 1.4401405835511714
+18/05/2022 18:14:13 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.09799559936343072 max_gamma_dif 0.5020617348892937
+18/05/2022 18:14:16 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 0.007507729511861285 max_gamma_dif 0.07030587460981064
+18/05/2022 18:14:20 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 0.006083470500476121 max_gamma_dif 0.05346281727153657
+18/05/2022 18:14:23 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 0.0025378029556147926 max_gamma_dif 0.010605856225909704
+18/05/2022 18:14:26 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 0.00011143565717495075 max_gamma_dif 0.0002634868926818523
+18/05/2022 18:14:30 - DEBUG - populationsim.steps.sub_balancing - PUMA 2504700.0 converged False iter 999
+18/05/2022 18:14:30 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:14:30 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_2504700.0 status OPTIMAL. 
+18/05/2022 18:14:30 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2504303, PUMA 2504303.0
+18/05/2022 18:14:30 - DEBUG - populationsim.simul_balancer - 89 positive weight rows out of 93
+18/05/2022 18:14:30 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 89 control_count 15 zone_count 70
+18/05/2022 18:14:30 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 260.28004704110356 max_gamma_dif 18.755926321479123
+18/05/2022 18:14:33 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.20922137305206095 max_gamma_dif 8.00405781872427
+18/05/2022 18:14:35 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.12546195657222559 max_gamma_dif 3.991765281323975
+18/05/2022 18:14:37 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 0.11708834021228673 max_gamma_dif 1.2879866212561488
+18/05/2022 18:14:39 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 400 delta 0.06667318337632447 max_gamma_dif 0.5328140718581277
+18/05/2022 18:14:41 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 500 delta 0.021318526802333194 max_gamma_dif 0.23887181558256032
+18/05/2022 18:14:44 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 600 delta 0.001694855721337222 max_gamma_dif 0.03994763831293202
+18/05/2022 18:14:46 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 700 delta 0.0012357872045041303 max_gamma_dif 0.021813832534248068
+18/05/2022 18:14:48 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 800 delta 0.0004145463167974158 max_gamma_dif 0.004323881591862033
+18/05/2022 18:14:50 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 900 delta 1.274323010384248e-05 max_gamma_dif 8.353919869907855e-05
+18/05/2022 18:14:53 - DEBUG - populationsim.steps.sub_balancing - PUMA 2504303.0 converged False iter 999
+18/05/2022 18:14:53 - INFO - populationsim.multi_integerizer - omitting 4 zero weight rows out of 93
+18/05/2022 18:14:53 - INFO - populationsim.multi_integerizer - restoring 4 zero weight rows
+18/05/2022 18:14:53 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+18/05/2022 18:14:53 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_2504303.0 status OPTIMAL. 
+18/05/2022 18:14:53 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 2501900, PUMA 2501900.0
+18/05/2022 18:14:53 - DEBUG - populationsim.simul_balancer - 47 positive weight rows out of 97
+18/05/2022 18:14:53 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 47 control_count 15 zone_count 129
+18/05/2022 18:14:53 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 652.7134355869827 max_gamma_dif 822.789051746769
+18/05/2022 18:14:57 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.002362825736261324 max_gamma_dif 413.386805871893
+18/05/2022 18:15:01 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 0.0033233901261336663 max_gamma_dif 186.43550411245985

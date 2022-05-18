@@ -43,6 +43,8 @@ input_table_list:
       SERIALNO: hh_id
       #hhnum: hh_id
       HH: num_hh
+    drop_columns:
+      - ESR
   - tablename: persons
     # expression_filename: seed_persons_expressions.csv
     filename : person_pums_2019_5YR.csv
@@ -110,7 +112,8 @@ output_synthetic_population:
   households:
     filename: synthetic_households.csv
     columns:
-      - NP
+      - HHNP
+      - HHEMPCAT
       - HHINCPADJ
   persons:
     filename: synthetic_persons.csv
@@ -128,7 +131,7 @@ models:
     - meta_control_factoring
     - final_seed_balancing
     - integerize_final_seed_weights
-    - sub_balancing.geography=TRACT
+    #- sub_balancing.geography=TRACT
     - sub_balancing.geography=TAZ
     - expand_households
     - write_data_dictionary
