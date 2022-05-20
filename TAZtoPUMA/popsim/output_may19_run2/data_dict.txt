@@ -1,0 +1,318 @@
+###
+### geo_cross_walk (6023, 4)
+###
+
+column_name                   dtype     checkpoint                     
+OID_                          int64     input_pre_processor            
+REGION                        int64     input_pre_processor            
+TAZ                           int64     input_pre_processor            
+PUMA                          int64     input_pre_processor            
+
+###
+### TAZ_control_data (5839, 55)
+###
+
+column_name                   dtype     checkpoint                     
+TAZ                           float64   input_pre_processor            
+In_CTPS_Model                 float64   input_pre_processor            
+In_101                        float64   input_pre_processor            
+In_97                         float64   input_pre_processor            
+In_63                         float64   input_pre_processor            
+TAZ_ID                        float64   input_pre_processor            
+State                         object    input_pre_processor            
+County                        object    input_pre_processor            
+Town                          object    input_pre_processor            
+RPA                           object    input_pre_processor            
+TAZ_Type                      object    input_pre_processor            
+Town_ID                       float64   input_pre_processor            
+Tot_Emp                       float64   input_pre_processor            
+Ret_Emp                       float64   input_pre_processor            
+Srv_Emp                       float64   input_pre_processor            
+Bas_Emp                       float64   input_pre_processor            
+K12G_Emp                      float64   input_pre_processor            
+K12P_Emp                      float64   input_pre_processor            
+Coll_Emp                      float64   input_pre_processor            
+HH                            float64   input_pre_processor            
+Income1                       float64   input_pre_processor            
+Income2                       float64   input_pre_processor            
+Income3                       float64   input_pre_processor            
+Income4                       float64   input_pre_processor            
+Income_Total                  float64   input_pre_processor            
+HH_Pop                        float64   input_pre_processor            
+Tot_Pop                       float64   input_pre_processor            
+GQ_Pop                        float64   input_pre_processor            
+Dorm_Pop                      float64   input_pre_processor            
+Worker0                       float64   input_pre_processor            
+Worker1                       float64   input_pre_processor            
+Worker2                       float64   input_pre_processor            
+Worker3p                      float64   input_pre_processor            
+Worker_Total                  float64   input_pre_processor            
+HHSize1                       float64   input_pre_processor            
+HHSize2                       float64   input_pre_processor            
+HHSize3                       float64   input_pre_processor            
+HHSize4p                      float64   input_pre_processor            
+Size_Total                    float64   input_pre_processor            
+Veh0                          float64   input_pre_processor            
+Veh1                          float64   input_pre_processor            
+Veh2                          float64   input_pre_processor            
+Veh3p                         float64   input_pre_processor            
+Veh_Total                     float64   input_pre_processor            
+ADT                           float64   input_pre_processor            
+Age0to4_enrollment            float64   input_pre_processor            
+Age5to14_enrollment           float64   input_pre_processor            
+Age15to18_enrollment          float64   input_pre_processor            
+Age19plus_commuters           float64   input_pre_processor            
+Age19plus_dorms               float64   input_pre_processor            
+Age0to4_enrollment_2016       float64   input_pre_processor            
+Age5to14_enrollment_2016      float64   input_pre_processor            
+Age15to18_enrollment_2016     float64   input_pre_processor            
+Age19plus_commuters_2016      float64   input_pre_processor            
+Age19plus_dorms_2016          float64   input_pre_processor            
+
+###
+### REGION_control_data (1, 43)
+###
+
+column_name                   dtype     checkpoint                     
+R_ID                          object    input_pre_processor            
+Tot_Emp                       int64     input_pre_processor            
+Ret_Emp                       int64     input_pre_processor            
+Srv_Emp                       int64     input_pre_processor            
+Bas_Emp                       int64     input_pre_processor            
+K12G_Emp                      int64     input_pre_processor            
+K12P_Emp                      int64     input_pre_processor            
+Coll_Emp                      int64     input_pre_processor            
+num_hh                        int64     input_pre_processor            
+Income1                       int64     input_pre_processor            
+Income2                       int64     input_pre_processor            
+Income3                       int64     input_pre_processor            
+Income4                       int64     input_pre_processor            
+Income_Total                  int64     input_pre_processor            
+HH_Pop                        int64     input_pre_processor            
+Tot_Pop                       int64     input_pre_processor            
+GQ_Pop                        int64     input_pre_processor            
+Dorm_Pop                      int64     input_pre_processor            
+Worker0                       int64     input_pre_processor            
+Worker1                       int64     input_pre_processor            
+Worker2                       int64     input_pre_processor            
+Worker3p                      int64     input_pre_processor            
+Worker_Total                  int64     input_pre_processor            
+HHSize1                       int64     input_pre_processor            
+HHSize2                       int64     input_pre_processor            
+HHSize3                       int64     input_pre_processor            
+HHSize4p                      int64     input_pre_processor            
+Size_Total                    int64     input_pre_processor            
+Veh0                          int64     input_pre_processor            
+Veh1                          int64     input_pre_processor            
+Veh2                          int64     input_pre_processor            
+Veh3p                         int64     input_pre_processor            
+Veh_Total                     int64     input_pre_processor            
+Age0to4_enrollment            int64     input_pre_processor            
+Age5to14_enrollment           int64     input_pre_processor            
+Age15to18_enrollment          int64     input_pre_processor            
+Age19plus_commuters           int64     input_pre_processor            
+Age19plus_dorms               int64     input_pre_processor            
+Age0to4_enrollment_2016       int64     input_pre_processor            
+Age5to14_enrollment_2016      int64     input_pre_processor            
+Age15to18_enrollment_2016     int64     input_pre_processor            
+Age19plus_commuters_2016      int64     input_pre_processor            
+Age19plus_dorms_2016          int64     input_pre_processor            
+
+###
+### crosswalk (5998, 3)
+###
+
+column_name                   dtype     checkpoint                     
+REGION                        int64     setup_data_structures          
+PUMA                          int64     setup_data_structures          
+TAZ                           int64     setup_data_structures          
+
+###
+### control_spec (15, 6)
+###
+
+column_name                   dtype     checkpoint                     
+target                        object    setup_data_structures          
+geography                     object    setup_data_structures          
+seed_table                    object    setup_data_structures          
+importance                    int64     setup_data_structures          
+control_field                 object    setup_data_structures          
+expression                    object    setup_data_structures          
+
+###
+### REGION_controls (1, 15)
+###
+
+column_name                   dtype     checkpoint                     
+REGION                        float64   setup_data_structures          
+HH                            float64   setup_data_structures          
+HHSize1                       float64   setup_data_structures          
+HHSize2                       float64   setup_data_structures          
+HHSize3                       float64   setup_data_structures          
+HHSize4p                      float64   setup_data_structures          
+Income1                       float64   setup_data_structures          
+Income2                       float64   setup_data_structures          
+Income3                       float64   setup_data_structures          
+Income4                       float64   setup_data_structures          
+HHWrk0                        float64   setup_data_structures          
+HHWrk1                        float64   setup_data_structures          
+HHWrk2                        float64   setup_data_structures          
+HHWrk3p                       float64   setup_data_structures          
+Tot_Emp                       float64   setup_data_structures          
+Tot_Pop                       float64   setup_data_structures          
+
+###
+### PUMA_controls (67, 15)
+###
+
+column_name                   dtype     checkpoint                     
+PUMA                          float64   setup_data_structures          
+HH                            float64   setup_data_structures          
+HHSize1                       float64   setup_data_structures          
+HHSize2                       float64   setup_data_structures          
+HHSize3                       float64   setup_data_structures          
+HHSize4p                      float64   setup_data_structures          
+Income1                       float64   setup_data_structures          
+Income2                       float64   setup_data_structures          
+Income3                       float64   setup_data_structures          
+Income4                       float64   setup_data_structures          
+HHWrk0                        float64   setup_data_structures          
+HHWrk1                        float64   setup_data_structures          
+HHWrk2                        float64   setup_data_structures          
+HHWrk3p                       float64   setup_data_structures          
+Tot_Emp                       float64   setup_data_structures          
+Tot_Pop                       float64   setup_data_structures          
+
+###
+### TAZ_controls (5718, 15)
+###
+
+column_name                   dtype     checkpoint                     
+TAZ                           float64   setup_data_structures          
+HH                            float64   setup_data_structures          
+HHSize1                       float64   setup_data_structures          
+HHSize2                       float64   setup_data_structures          
+HHSize3                       float64   setup_data_structures          
+HHSize4p                      float64   setup_data_structures          
+Income1                       float64   setup_data_structures          
+Income2                       float64   setup_data_structures          
+Income3                       float64   setup_data_structures          
+Income4                       float64   setup_data_structures          
+HHWrk0                        float64   setup_data_structures          
+HHWrk1                        float64   setup_data_structures          
+HHWrk2                        float64   setup_data_structures          
+HHWrk3p                       float64   setup_data_structures          
+Tot_Emp                       float64   setup_data_structures          
+Tot_Pop                       float64   setup_data_structures          
+
+###
+### households (177009, 9)
+###
+
+column_name                   dtype     checkpoint                     
+hh_id                         int64     input_pre_processor            
+WGTP                          int64     input_pre_processor            
+NP                            int64     input_pre_processor            
+PUMA                          int64     input_pre_processor            
+ST                            int64     input_pre_processor            
+TYPE                          int64     input_pre_processor            
+HHEMP                         int64     input_pre_processor            
+HHINCPADJ                     int64     input_pre_processor            
+HHNP                          int64     input_pre_processor            
+HHEMPCAT                      int64     input_pre_processor            
+
+###
+### persons (435813, 8)
+###
+
+column_name                   dtype     checkpoint                     
+hh_id                         int64     input_pre_processor            
+PWGTP                         int64     input_pre_processor            
+per_num                       int64     input_pre_processor            
+ESR                           object    input_pre_processor            
+EMP                           int64     input_pre_processor            
+PINCPADJ                      int64     input_pre_processor            
+PUMA                          int64     input_pre_processor            
+ST                            int64     input_pre_processor            
+
+###
+### household_groups (177009, 3)
+###
+
+column_name                   dtype     checkpoint                     
+group_id                      int32     setup_data_structures          
+sample_weight                 int64     setup_data_structures          
+hh_id                         int64     setup_data_structures          
+
+###
+### incidence_table (5877, 20)
+###
+
+column_name                   dtype     checkpoint                     
+hh_id                         int64     setup_data_structures          
+HH                            int64     setup_data_structures          
+HHSize1                       int64     setup_data_structures          
+HHSize2                       int64     setup_data_structures          
+HHSize3                       int64     setup_data_structures          
+HHSize4p                      int64     setup_data_structures          
+Income1                       int64     setup_data_structures          
+Income2                       int64     setup_data_structures          
+Income3                       int64     setup_data_structures          
+Income4                       int64     setup_data_structures          
+HHWrk0                        int64     setup_data_structures          
+HHWrk1                        int64     setup_data_structures          
+HHWrk2                        int64     setup_data_structures          
+HHWrk3p                       int64     setup_data_structures          
+Tot_Emp                       int64     setup_data_structures          
+Tot_Pop                       int64     setup_data_structures          
+PUMA                          int64     setup_data_structures          
+REGION                        int64     setup_data_structures          
+sample_weight                 int64     setup_data_structures          
+group_size                    int64     setup_data_structures          
+group_id                      int64     setup_data_structures          
+
+###
+### PUMA_weights (5877, 6)
+###
+
+column_name                   dtype     checkpoint                     
+PUMA                          int64     initial_seed_balancing         
+preliminary_balanced_weight   float64   initial_seed_balancing         
+sample_weight                 int64     initial_seed_balancing         
+hh_id                         int64     initial_seed_balancing         
+balanced_weight               float64   final_seed_balancing           
+integer_weight                int64     integerize_final_seed_weights  
+
+###
+### TAZ_weights (518484, 6)
+###
+
+column_name                   dtype     checkpoint                     
+hh_id                         int64     sub_balancing.geography=TAZ    
+TAZ                           float64   sub_balancing.geography=TAZ    
+balanced_weight               float64   sub_balancing.geography=TAZ    
+integer_weight                int32     sub_balancing.geography=TAZ    
+PUMA                          int64     sub_balancing.geography=TAZ    
+REGION                        int64     sub_balancing.geography=TAZ    
+
+###
+### TAZ_weights_sparse (277490, 6)
+###
+
+column_name                   dtype     checkpoint                     
+hh_id                         int64     sub_balancing.geography=TAZ    
+TAZ                           float64   sub_balancing.geography=TAZ    
+balanced_weight               float64   sub_balancing.geography=TAZ    
+integer_weight                int32     sub_balancing.geography=TAZ    
+PUMA                          int64     sub_balancing.geography=TAZ    
+REGION                        int64     sub_balancing.geography=TAZ    
+
+###
+### expanded_household_ids (4047620, 3)
+###
+
+column_name                   dtype     checkpoint                     
+PUMA                          float64   expand_households              
+TAZ                           float64   expand_households              
+hh_id                         int32     expand_households              
+

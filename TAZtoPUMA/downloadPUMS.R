@@ -11,7 +11,8 @@ pums_vars <- pums_variables %>%
 
 #download just the variables you need for MA, RI, and NH
 pums <- get_pums(
-  variables = c("PUMA","SERIALNO","TYPE","ST","WGTP","PWGTP","NP","HINCP","ADJINC","SPORDER","ESR"),
+  variables = c("PUMA","SERIALNO","TYPE","ST","WGTP","PWGTP","NP","HINCP",
+                "ADJINC","SPORDER","ESR","PINCP"),
   state = c("MA","RI","NH"),
   survey = "acs5",
   year = 2019
@@ -52,6 +53,7 @@ pums <- pums %>%
 #still need to deal with the adjustment factor for $
 # adjusting to 2015
 pums <- pums %>% mutate(HHINCPADJ = round(HINCP * as.numeric(ADJINC),0))
+pums <- pums %>% mutate(PINCPADJ = round(PINCP * as.numeric(ADJINC),0))
 
 # HH categories for people per HH
 pums <- pums %>% mutate(HHNP = if_else(NP<3,NP,4))
@@ -62,7 +64,7 @@ pums <- pums %>% mutate(HHEMPCAT = if_else(HHEMP<3,HHEMP,3))
 #separate HH and P
 hh <- pums %>% distinct(SERIALNO,TYPE, WGTP, NP, PUMA, ST, HHNP, HHEMP,HHEMPCAT,HHINCPADJ)
 
-p <- pums %>% select(SERIALNO, PWGTP, SPORDER, ESR, EMP, PUMA, ST)
+p <- pums %>% select(SERIALNO, PWGTP, SPORDER, ESR, EMP, PINCPADJ, PUMA, ST)
 
 p$PUMA <- paste0(p$ST,p$PUMA)
 hh$PUMA <- paste0(hh$ST,hh$PUMA)

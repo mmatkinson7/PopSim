@@ -118,8 +118,8 @@ output_synthetic_population:
   persons:
     filename: synthetic_persons.csv
     columns:
-      - per_num
       - EMP
+      - PINCPADJ
 
 
 # Model steps for base mode
