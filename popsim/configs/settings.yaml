@@ -22,7 +22,7 @@ seed_geography: PUMA
 # Tracing
 # ------------------------------------------------------------------
 #trace_geography:
-  #TAZ: 100
+  #TAZ: 21
   #TRACT: 10200
 
   
