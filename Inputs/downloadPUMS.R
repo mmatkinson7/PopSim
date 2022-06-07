@@ -1,6 +1,6 @@
 #download required PUMS data for PopSim
 
-setwd("J:\\Shared drives\\TMD_TSA\\Model\\software\\PopSim\\TAZtoPUMA")
+setwd("J:\\Shared drives\\TMD_TSA\\Model\\software\\PopSim\\popsim")
 
 library(tidycensus)
 library(tidyverse)
@@ -51,9 +51,10 @@ pums <- pums %>%
 
 
 #still need to deal with the adjustment factor for $
-# adjusting to 2015
-pums <- pums %>% mutate(HHINCPADJ = round(HINCP * as.numeric(ADJINC),0))
-pums <- pums %>% mutate(PINCPADJ = round(PINCP * as.numeric(ADJINC),0))
+# adjusting to 2015 with ADJINC
+# adjusting to 2010 with 0.913 (8.7% inflation 2010 to 2015)
+pums <- pums %>% mutate(HHINCPADJ = round(HINCP * as.numeric(ADJINC)* 0.913,0))
+pums <- pums %>% mutate(PINCPADJ = round(PINCP * as.numeric(ADJINC) * 0.913,0))
 
 # HH categories for people per HH
 pums <- pums %>% mutate(HHNP = if_else(NP<3,NP,4))

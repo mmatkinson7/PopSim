@@ -68,7 +68,7 @@ input_table_list:
     column_map:
       TAZ: TAZ
   - tablename: TAZ_control_data
-    filename : 2040_LandUse_update_11_05_2018_.csv
+    filename : 2040_LandUse_update_06_07_2022.csv #updated TAZ 208757
     rename_columns:
       ID: TAZ
   - tablename: REGION_control_data

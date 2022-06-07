@@ -291,7 +291,7 @@ PUMA                          int64     sub_balancing.geography=TAZ
 REGION                        int64     sub_balancing.geography=TAZ    
 
 ###
-### TAZ_weights_sparse (273816, 6)
+### TAZ_weights_sparse (268525, 6)
 ###
 
 column_name                   dtype     checkpoint                     
@@ -303,7 +303,7 @@ PUMA                          int64     sub_balancing.geography=TAZ
 REGION                        int64     sub_balancing.geography=TAZ    
 
 ###
-### expanded_household_ids (3944971, 3)
+### expanded_household_ids (3945131, 3)
 ###
 
 column_name                   dtype     checkpoint                     

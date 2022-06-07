@@ -1,0 +1,13 @@
+process_name,model_name,seconds,minutes
+MainProcess,input_pre_processor,0.8,0.0
+MainProcess,setup_data_structures,0.6,0.0
+MainProcess,initial_seed_balancing,20.0,0.3
+MainProcess,meta_control_factoring,0.1,0.0
+MainProcess,final_seed_balancing,0.1,0.0
+MainProcess,integerize_final_seed_weights,0.8,0.0
+MainProcess,sub_balancing.geography=TAZ,1964.4,32.7
+MainProcess,expand_households,97.9,1.6
+MainProcess,write_data_dictionary,1.0,0.0
+MainProcess,summarize,15.0,0.3
+MainProcess,write_tables,9.2,0.2
+MainProcess,write_synthetic_population,39.2,0.7
