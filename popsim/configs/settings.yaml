@@ -119,6 +119,7 @@ output_synthetic_population:
     filename: synthetic_persons.csv
     columns:
       - EMP
+      - AGEP
       - PINCPADJ
 
 

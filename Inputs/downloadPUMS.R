@@ -1,6 +1,6 @@
 #download required PUMS data for PopSim
 
-setwd("J:\\Shared drives\\TMD_TSA\\Model\\software\\PopSim\\popsim")
+setwd("J:\\Shared drives\\TMD_TSA\\Model\\software\\PopSim\\popsim16\\data")
 
 library(tidycensus)
 library(tidyverse)
@@ -12,7 +12,7 @@ pums_vars <- pums_variables %>%
 #download just the variables you need for MA, RI, and NH
 pums <- get_pums(
   variables = c("PUMA","SERIALNO","TYPE","ST","WGTP","PWGTP","NP","HINCP",
-                "ADJINC","SPORDER","ESR","PINCP"),
+                "ADJINC","SPORDER","ESR","PINCP","AGEP"),
   state = c("MA","RI","NH"),
   survey = "acs5",
   year = 2019
@@ -20,8 +20,14 @@ pums <- get_pums(
 
 #get just housing units, exclude group quarters
 pums <- pums %>% filter(TYPE == 1)
+
+# filter out weird results
+pums <- pums %>% filter(!(SERIALNO %in% c("2017001072935","2017001381701",
+                                        "2018HU0472705","2018HU0689928",
+                                        "2019HU0408892")))
 #just get PUMAs in the model region
 #pums <- pums %>% filter((ST != 33 & PUMA != "00100") & (ST != 33 & PUMA != "00200"))
+
 #make sure SERIALNO is just numbers
 pums$SERIALNO <- gsub("HU","",pums$SERIALNO)
 pums$SERIALNO_orig <- pums$SERIALNO
@@ -55,9 +61,11 @@ pums <- pums %>%
 # adjusting to 2010 with 0.913 (8.7% inflation 2010 to 2015)
 pums <- pums %>% mutate(HHINCPADJ = round(HINCP * as.numeric(ADJINC)* 0.913,0))
 pums <- pums %>% mutate(PINCPADJ = round(PINCP * as.numeric(ADJINC) * 0.913,0))
+# if age is under 16, set income to 0 (negative -19999 otherwise)
+pums <- pums %>% mutate(PINCPADJ = if_else(AGEP < 16, 0, PINCPADJ))
 
 # HH categories for people per HH
-pums <- pums %>% mutate(HHNP = if_else(NP<3,NP,4))
+pums <- pums %>% mutate(HHNP = if_else(NP<4,NP,4))
 
 # HH categories for workers per HH
 pums <- pums %>% mutate(HHEMPCAT = if_else(HHEMP<3,HHEMP,3))
@@ -65,7 +73,7 @@ pums <- pums %>% mutate(HHEMPCAT = if_else(HHEMP<3,HHEMP,3))
 #separate HH and P
 hh <- pums %>% distinct(SERIALNO,TYPE, WGTP, NP, PUMA, ST, HHNP, HHEMP,HHEMPCAT,HHINCPADJ)
 
-p <- pums %>% select(SERIALNO, PWGTP, SPORDER, ESR, EMP, PINCPADJ, PUMA, ST)
+p <- pums %>% select(SERIALNO, PWGTP, SPORDER, ESR, EMP, PINCPADJ, PUMA, ST, AGEP)
 
 p$PUMA <- paste0(p$ST,p$PUMA)
 hh$PUMA <- paste0(hh$ST,hh$PUMA)
